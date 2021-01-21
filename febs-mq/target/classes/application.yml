@@ -1,0 +1,64 @@
+server:
+  port: 8501
+
+spring:
+  application:
+    name: FEBS-MQ
+  # 关闭多数据源自动装配
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  boot:
+    admin:
+      client:
+        url: http://localhost:8501
+        username: febs
+        password: 123456
+  #配置rabbitMq 服务器
+  rabbitmq:
+    host: 47.98.136.239
+    port: 5672
+    username: guest
+    password: guest
+    #虚拟host 可以不设置,使用server默认host
+#    virtual-host: JCcccHost
+
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: "Parent pom providing dependency and plugin management for applications
+		built with Maven"
+    version: "1.0-SNAPSHOT"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 20
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    instance-info-replication-interval-seconds: 30
+    registry-fetch-interval-seconds: 3
+    serviceUrl:
+      defaultZone: http://febs:123456@localhost:8001/register/eureka/
+security:
+  oauth2:
+    resource:
+      id: ${spring.application.name}
+      user-info-uri: http://localhost:8301/auth/user
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  shareSecurityContext: true
+
+

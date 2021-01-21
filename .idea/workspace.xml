@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f4787d2-1677-45e5-9d48-7063f12d0570" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="micro_project_perfect" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="mybatis-mapper" />
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/program/maven/apache-maven-3.5.4" />
+        <option name="userSettingsFile" value="D:\program\maven\apache-maven-3.5.4\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1mH1OFHBE1wI9dPI05Em8m1qMbI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/febs-common/src/main/java/cc/mrbird/febs/common/entity/system" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\springcloud_space\micro_project_perfect" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cc.mrbird.febs.mq.msg" />
+      <recent name="cc.mrbird.febs.common.api" />
+      <recent name="cc.mrbird.febs.mq.config" />
+      <recent name="cc.mrbird.febs.common.config.rabbitmq" />
+      <recent name="cc.mrbird.febs.common.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\springcloud_space\micro_project_perfect\febs-common\src\main\java\cc\mrbird\febs\common\entity\system" />
+      <recent name="E:\springcloud_space\micro_project_perfect\febs-server\febs-server-system\src\main\java\cc\mrbird\febs\server\system\controller" />
+      <recent name="E:\springcloud_space\micro_project_perfect\febs-server\febs-server-system\src\main\java\cc\mrbird\febs\server\system\Service\Impl" />
+      <recent name="E:\springcloud_space\micro_project_perfect\febs-server\febs-server-system\src\main\java\cc\mrbird\febs\server\system\Service" />
+      <recent name="E:\springcloud_space\micro_project_perfect\febs-server\febs-server-system\src\main\java\cc\mrbird\febs\server\system\mapper" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8101/oauth/token" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.FebsMqApplication">
+    <configuration name="FebsAuthApplication#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/FebsAuthApplication.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="FebsAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="febs-auth" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cc.mrbird.febs.server.system.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cc.mrbird.febs.FebsAuthApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FebsGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="febs-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cc.mrbird.febs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cc.mrbird.febs.FebsGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FebsMonitorAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="febs-monitor-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cc.mrbird.febs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cc.mrbird.febs.FebsMonitorAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FebsMqApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="febs-mq" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cc.mrbird.febs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cc.mrbird.febs.FebsMqApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FebsRegisterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="febs-register" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cc.mrbird.febs.register.FebsRegisterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FebsServerSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="febs-server-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cc.mrbird.febs.FebsServerSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FebsServerTestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="febs-server-test" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cc.mrbird.febs.FebsServerTestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.FebsAuthApplication#1" />
+      <item itemvalue="Spring Boot.FebsRegisterApplication" />
+      <item itemvalue="Spring Boot.FebsServerSystemApplication" />
+      <item itemvalue="Spring Boot.FebsServerTestApplication" />
+      <item itemvalue="Spring Boot.FebsAuthApplication" />
+      <item itemvalue="Spring Boot.FebsGatewayApplication" />
+      <item itemvalue="Spring Boot.FebsMonitorAdminApplication" />
+      <item itemvalue="Spring Boot.FebsMqApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.FebsMqApplication" />
+        <item itemvalue="Spring Boot.FebsMonitorAdminApplication" />
+        <item itemvalue="Spring Boot.FebsGatewayApplication" />
+        <item itemvalue="Spring Boot.FebsAuthApplication" />
+        <item itemvalue="HTTP Request.FebsAuthApplication#1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.2554645" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\MI\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f4787d2-1677-45e5-9d48-7063f12d0570" name="Default Changelist" comment="" />
+      <created>1609135668303</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609135668303</updated>
+      <workItem from="1609135669636" duration="5761000" />
+      <workItem from="1609143215567" duration="17757000" />
+      <workItem from="1609220675927" duration="392000" />
+      <workItem from="1609221092669" duration="4313000" />
+      <workItem from="1609316769617" duration="12747000" />
+      <workItem from="1609489846577" duration="49026000" />
+      <workItem from="1609896333195" duration="8958000" />
+      <workItem from="1609982269606" duration="86479000" />
+      <workItem from="1610453070969" duration="14275000" />
+      <workItem from="1610539572596" duration="15766000" />
+      <workItem from="1610672078520" duration="4153000" />
+      <workItem from="1610758832439" duration="13259000" />
+      <workItem from="1610871333003" duration="4057000" />
+      <workItem from="1610875498230" duration="4870000" />
+      <workItem from="1610933262216" duration="6317000" />
+      <workItem from="1611026015952" duration="16342000" />
+      <workItem from="1611061964911" duration="3444000" />
+      <workItem from="1611121643803" duration="12966000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="407" y="64" key="#FebsAuthApplication_(1)" timestamp="1609221137093">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="407" y="64" key="#FebsAuthApplication_(1)/0.0.1536.824@0.0.1536.824" timestamp="1609221137093" />
+    <state x="361" y="74" key="#Project_Structure" timestamp="1609737986807">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1609737986807" />
+    <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609733836829">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609733836829" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1611065613452">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1611065613452" />
+    <state x="311" y="341" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1609991324645">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="311" y="341" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1609991324645" />
+    <state x="504" y="279" width="527" height="271" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1609747574942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="504" y="279" width="527" height="271" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1609747574942" />
+    <state x="524" y="121" key="#xdebugger.evaluate" timestamp="1610466070816">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="524" y="121" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1610466070816" />
+    <state width="544" height="466" key="DebuggerActiveHint" timestamp="1611136367795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="544" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1611136367795" />
+    <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1610945554212">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610945554212" />
+    <state width="1089" height="344" key="GridCell.Tab.0.bottom" timestamp="1611137568553">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611137568553" />
+    <state width="1089" height="344" key="GridCell.Tab.0.center" timestamp="1611137568552">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611137568552" />
+    <state width="1089" height="344" key="GridCell.Tab.0.left" timestamp="1611137568552">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611137568552" />
+    <state width="1089" height="344" key="GridCell.Tab.0.right" timestamp="1611137568553">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611137568553" />
+    <state width="1089" height="344" key="GridCell.Tab.1.bottom" timestamp="1611137568554">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611137568554" />
+    <state width="1089" height="344" key="GridCell.Tab.1.center" timestamp="1611137568554">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611137568554" />
+    <state width="1089" height="344" key="GridCell.Tab.1.left" timestamp="1611137568554">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611137568554" />
+    <state width="1089" height="344" key="GridCell.Tab.1.right" timestamp="1611137568554">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611137568554" />
+    <state width="1089" height="344" key="GridCell.Tab.2.bottom" timestamp="1611137568555">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611137568555" />
+    <state width="1089" height="344" key="GridCell.Tab.2.center" timestamp="1611137568555">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1611137568555" />
+    <state width="1089" height="344" key="GridCell.Tab.2.left" timestamp="1611137568554">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1611137568554" />
+    <state width="1089" height="344" key="GridCell.Tab.2.right" timestamp="1611137568555">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1089" height="344" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1611137568555" />
+    <state x="299" y="71" key="Maven.ArtifactSearchDialog" timestamp="1610017300412">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="299" y="71" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1610017300412" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1611041383211">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611041383211" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1611056151527">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1611056151527" />
+    <state x="540" y="131" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1609739515117">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="540" y="131" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1609739515117" />
+    <state x="273" y="152" width="1024" height="625" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1610810546219">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="273" y="152" width="1024" height="625" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1610810546219" />
+    <state x="457" y="167" width="660" height="490" key="find.popup" timestamp="1611041950661">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="457" y="167" width="660" height="490" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1611041950661" />
+    <state x="178" y="117" key="new project wizard" timestamp="1611041406042">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="117" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1611041406042" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611055150412">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1611055150412" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/febs-server/febs-server-system/src/main/java/cc/mrbird/febs/server/system/Service/Impl/UserServiceImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.5.RELEASE/spring-security-core-5.1.5.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class</url>
+          <line>184</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.java</url>
+          <line>190</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/password/ResourceOwnerPasswordTokenGranter.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/config/annotation/web/configurers/AuthorizationServerEndpointsConfigurer.java</url>
+          <line>574</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.5.RELEASE/spring-security-config-5.1.5.RELEASE.jar!/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.class</url>
+          <line>306</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/password/ResourceOwnerPasswordTokenGranter.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.5.RELEASE/spring-security-core-5.1.5.RELEASE-sources.jar!/org/springframework/security/authentication/ProviderManager.java</url>
+          <line>199</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/febs-auth/src/main/java/cc/mrbird/febs/auth/service/FebsUserDetailService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.5.RELEASE/spring-security-core-5.1.5.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/febs-auth/src/main/java/cc/mrbird/febs/auth/filter/ValidateCodeFilter.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/febs-auth/src/main/java/cc/mrbird/febs/auth/manager/UserManager.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/febs-auth/src/main/java/cc/mrbird/febs/auth/controller/SecurityController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/febs-auth/src/main/java/cc/mrbird/febs/auth/controller/RedisTestController.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/oauth/spring-security-oauth2/2.3.4.RELEASE/spring-security-oauth2-2.3.4.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/token/store/redis/RedisTokenStore.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/febs-auth/src/main/java/cc/mrbird/febs/auth/controller/RedisTestController.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/febs-common/src/main/java/cc/mrbird/febs/common/utils/html/HTMLFilter.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
