@@ -22,9 +22,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @EnableFeignClients // 开启feign
 @EnableDiscoveryClient
 @SpringBootApplication
-//@EnableFebsAuthExceptionHandler
-//@EnableFebsOauth2FeignClient // 配置远程过程调用的请求头
-//@EnableFebsServerProtect
 @FebsCloudApplication
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class FebsServerTestApplication {
