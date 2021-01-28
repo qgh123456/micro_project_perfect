@@ -2,22 +2,6 @@ server:
   port: 8201
   servlet:
     context-path: /system
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 20
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    instance-info-replication-interval-seconds: 30
-    serviceUrl:
-      defaultZone: http://febs:123456@localhost:8001/register/eureka/
-
-security:
-  oauth2:
-    resource:
-      id: ${spring.application.name}
-      user-info-uri: http://localhost:8301/auth/user
-
 spring:
   application:
     name: FEBS-Server-System
@@ -38,6 +22,24 @@ spring:
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://47.98.136.239:3310/myproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
       p6spy: true
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 20
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    instance-info-replication-interval-seconds: 30
+    serviceUrl:
+      defaultZone: http://febs:123456@localhost:8001/register/eureka/
+
+security:
+  oauth2:
+    resource:
+      id: ${spring.application.name}
+      user-info-uri: http://localhost:8301/auth/user
+
+
 
 #rabbitmq的配置
   rabbitmq:
