@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.server.system.mapper.MenuMapper">
+
+
+    <select id="findUserPermissions" resultType="cc.mrbird.febs.common.entity.system.Menu">
+         select distinct m.perms
+        from sys_role r
+                 left join sys_user_role ur on (r.role_id = ur.role_id)
+                 left join t_user u on (u.user_id = ur.user_id)
+                 left join sys_role_menu rm on (rm.role_id = r.role_id)
+                 left join t_menu m on (m.menu_id = rm.menu_id)
+        where u.username = #{userName}
+          and m.perms <![CDATA[ != ]]> ''
+    </select>
+
+
+    <select id="findUserMenus" resultType="cc.mrbird.febs.common.entity.system.Menu">
+  		select
+            tm.MENU_ID,
+            tm.PARENT_ID,
+            tm.MENU_NAME,
+            tm.path,
+            tm.COMPONENT,
+            tm.PERMS,
+            tm.ICON,
+            tm.type,
+            tm.ORDER_NUM
+        from
+            t_menu tm
+        inner join sys_role_menu srm on tm.menu_id = srm.menu_id
+        inner join sys_user_role sur on sur.role_id = srm.role_id
+        inner join t_user tu on sur.user_id = tu.user_id
+        where tm.type != '1'
+        and tm.del_flag = '0'
+        and tu.username = #{userName}
+        group by tm.MENU_ID
+    </select>
+</mapper>

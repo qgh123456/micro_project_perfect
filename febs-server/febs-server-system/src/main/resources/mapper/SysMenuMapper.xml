@@ -26,7 +26,7 @@
         <result property="delFlag" column="del_flag"/>
     </resultMap>
 
-    <select id="findUserPermissions" resultType="cc.mrbird.febs.common.entity.system.Menu">
+<!--    <select id="findUserPermissions" resultType="cc.mrbird.febs.common.entity.system.Menu">
         select distinct m.perms
         from t_role r
                  left join t_user_role ur on (r.role_id = ur.role_id)
@@ -42,7 +42,7 @@
     <select id="findUserMenus" resultType="cc.mrbird.febs.common.entity.system.SysMenu">
 
 
-    </select>
+    </select>-->
 
 
 </mapper>
