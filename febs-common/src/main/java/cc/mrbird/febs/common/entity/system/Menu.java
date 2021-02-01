@@ -13,7 +13,7 @@ import java.util.Date;
  * @Date: 2021/1/5 13:14
  */
 @Data
-@TableName("sys_menu")
+@TableName("t_menu")
 public class Menu implements Serializable {
 
     private static final long serialVersionUID = 7187628714679791771L;
@@ -78,41 +78,12 @@ public class Menu implements Serializable {
     @TableField(value = "update_time",fill = FieldFill.INSERT_UPDATE)
     private Date updateTime;
 
-    /**
-     * 是否缓存（0缓存 1不缓存）
-     */
-    @TableField("is_frame")
-    private Integer isFrame;
-
-    /**
-     * 是否缓存（0缓存 1不缓存）
-     */
-    @TableField("is_cache")
-    private Integer isCache;
 
     /**
      * 菜单类型（M目录 C菜单 F按钮）
      */
-    @TableField("menu_type")
-    private String menuType;
-
-    /**
-     * 菜单类型（M目录 C菜单 F按钮）
-     */
-    @TableField("visible")
-    private String visible;
-
-    /**
-     * 菜单状态（0正常 1停用）
-     */
-    @TableField("status")
-    private String status;
-
-    /**
-     * 备注
-     */
-    @TableField("remark")
-    private String remark;
+    @TableField("type")
+    private String type;
 
     /**
      * 0 未删除 1 已删除
