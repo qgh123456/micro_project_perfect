@@ -4,6 +4,8 @@ import cc.mrbird.febs.common.entity.system.SysMenu;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * 菜单权限表
  * 
@@ -11,7 +13,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @email lxf@atguigu.com
  * @date 2021-01-20 18:16:51
  */
-@Mapper
+//@Mapper
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
-	
+
 }
