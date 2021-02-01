@@ -29,7 +29,7 @@ import java.util.Base64;
  * @Date: 2021/1/6 11:00
  */
 @Slf4j
-//@Component
+@Component
 public class ValidateCodeFilter extends OncePerRequestFilter {
 
     @Autowired
