@@ -1,6 +1,6 @@
 package cc.mrbird.febs.auth.config;
 
-//import cc.mrbird.febs.auth.filter.ValidateCodeFilter;
+import cc.mrbird.febs.auth.filter.ValidateCodeFilter;
 import cc.mrbird.febs.auth.service.FebsUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -29,8 +29,8 @@ public class FebsSecurityConfigure extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-//    @Autowired
-//    private ValidateCodeFilter validateCodeFilter;
+    @Autowired
+    private ValidateCodeFilter validateCodeFilter;
 
     /**
      * 密码模式需要使用到这个Bean
@@ -46,7 +46,7 @@ public class FebsSecurityConfigure extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // 在xx过滤器之前执行
-//        http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
+        http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class);
 
         http.requestMatchers()
                 .antMatchers("/oauth/**")

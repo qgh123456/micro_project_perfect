@@ -65,7 +65,7 @@ public class RedisTestController {
         OAuth2Authentication oAuth2Authentication = tokenStore.readAuthentication(key);
         Object principal = oAuth2Authentication.getPrincipal();
 
-        return Result.ok().data(oAuth2Authentication);
+        return Result.ok().data(principal);
     }
 
 }
