@@ -12,6 +12,7 @@
     <artifactId>febs-server-test</artifactId>
     <name>FEBS-Server-Test</name>
     <description>FEBS-Server-Test测试服务模块</description>
+    <packaging>jar</packaging>
 
 
     <build>
