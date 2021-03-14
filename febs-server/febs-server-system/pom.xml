@@ -10,8 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>febs-server-system</artifactId>
+    <packaging>pom</packaging>
     <name>febs-server-system</name>
     <description>FEBS-Server-System微服务系统模块</description>
+    <modules>
+        <module>systemServer</module>
+        <module>api_system</module>
+        <module>vo_system</module>
+    </modules>
 
     <dependencies>
         <dependency>
