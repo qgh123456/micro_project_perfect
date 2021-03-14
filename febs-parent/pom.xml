@@ -29,7 +29,7 @@
         <module>../febs-gateway</module>
         <module>../febs-server</module>
         <module>../febs-monitor</module>
-        <module>../febs-mq</module>
+<!--        <module>../febs-mq</module>-->
 
     </modules>
 
