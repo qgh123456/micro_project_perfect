@@ -26,10 +26,10 @@ public class TestController {
     @GetMapping("hello")
     public String hello(String name) {
         log.info("/hello服务被调用");
-        if(name.equals("xiaoming")){
+        if("xiaoming".equals(name)){
             throw new RuntimeException("xxx");
         }
-        if(name.equals("xiaohong")){
+        if("xiaohong".equals(name)){
             try {
                 Thread.sleep(800L);
             } catch (InterruptedException e) {
