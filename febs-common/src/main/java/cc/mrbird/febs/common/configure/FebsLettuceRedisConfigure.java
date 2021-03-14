@@ -31,7 +31,7 @@ public class FebsLettuceRedisConfigure {
     @Bean
     @ConditionalOnClass(RedisOperations.class)
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
-       /* RedisTemplate<String, Object> template = new RedisTemplate<>();
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(factory);
 
         Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
@@ -51,9 +51,9 @@ public class FebsLettuceRedisConfigure {
         template.setHashValueSerializer(jackson2JsonRedisSerializer);
         template.afterPropertiesSet();
 
-        return template;*/
+        return template;
 
-        RedisTemplate<String, Object> template = new RedisTemplate<>();
+/*        RedisTemplate<String, Object> template = new RedisTemplate<>();
         RedisSerializer<String> redisSerializer = new StringRedisSerializer();
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
         ObjectMapper om = new ObjectMapper();
@@ -67,7 +67,7 @@ public class FebsLettuceRedisConfigure {
         template.setValueSerializer(jackson2JsonRedisSerializer);
         //value hashmap序列化
         template.setHashValueSerializer(jackson2JsonRedisSerializer);
-        return template;
+        return template;*/
     }
 
     @Bean

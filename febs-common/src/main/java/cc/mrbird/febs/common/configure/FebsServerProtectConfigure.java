@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @ProjectName: micro_project_perfect
- * @Description:
+ * @Description: 添加进入每个微服务的过滤
  * @Author: qiguohui
  * @Date: 2021/1/4 19:19
  */
