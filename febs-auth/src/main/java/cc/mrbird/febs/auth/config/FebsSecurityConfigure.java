@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 /**
  * @ProjectName: micro_project_perfect
- * @Description: 100
+ * @Description: 100  认证服务器
  * @Author: qiguohui
  * @Date: 2020/12/29 10:53
  */
@@ -29,8 +29,8 @@ public class FebsSecurityConfigure extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    private ValidateCodeFilter validateCodeFilter;
+//    @Autowired
+//    private ValidateCodeFilter validateCodeFilter;
 
     /**
      * 密码模式需要使用到这个Bean
@@ -46,7 +46,7 @@ public class FebsSecurityConfigure extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // 在xx过滤器之前执行
-        http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class);
+//        http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class);
 
         http.requestMatchers()
                 .antMatchers("/oauth/**")

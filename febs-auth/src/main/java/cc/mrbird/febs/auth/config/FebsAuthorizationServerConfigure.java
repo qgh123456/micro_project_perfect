@@ -24,7 +24,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
 /**
  * @ProjectName: micro_project_perfect
- * @Description:
+ * @Description: 授权服务器
  * @Author: qiguohui
  * @Date: 2020/12/29 12:26
  */

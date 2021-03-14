@@ -23,6 +23,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @EnableDiscoveryClient
 @SpringBootApplication
 @FebsCloudApplication
+// 表示开启Spring Cloud Security权限注解
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class FebsServerTestApplication {
 

@@ -4,6 +4,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import javax.servlet.Filter;
+
 /**
  * 资源纳入到免认证路径中
  */
@@ -14,6 +16,7 @@ public class FebsRegisterWebSecurityConfigure extends WebSecurityConfigurerAdapt
         http.csrf().ignoringAntMatchers("/eureka/**")
                 .and()
                 .authorizeRequests().antMatchers("/actuator/**").permitAll();
+
         super.configure(http);
     }
 }

@@ -14,6 +14,7 @@ spring:
         url: http://localhost:8401
         username: febs
         password: 123456
+
   #rabbitmq的配置
   rabbitmq:
     host: 47.98.136.239
@@ -73,6 +74,10 @@ zuul:
   ribbon:
     eager-load:
       enabled: true
-
+   # 让默认的异常过滤器失效
+  SendErrorFilter:
+    error:
+      disable: true
 ribbon:
   ReadTimeout: 360000
+

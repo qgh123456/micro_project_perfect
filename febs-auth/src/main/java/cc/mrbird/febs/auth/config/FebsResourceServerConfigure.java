@@ -18,6 +18,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
  * @Date: 2020/12/29 10:55
  */
 @Configuration
+// 声明为一个OAuth2的资源服务器
 @EnableResourceServer
 public class FebsResourceServerConfigure extends ResourceServerConfigurerAdapter {
 
@@ -33,10 +34,13 @@ public class FebsResourceServerConfigure extends ResourceServerConfigurerAdapter
         String[] anonUrls = StringUtils.splitByWholeSeparatorPreserveAllTokens(properties.getAnonUrl(), ",");
 
         http.csrf().disable()
+                // 匹配所有的请求
                 .requestMatchers().antMatchers("/**")
                 .and()
                 .authorizeRequests()
+                // 对请求中annoUrls免认证
                 .antMatchers(anonUrls).permitAll()
+                // 其他的都认证
                 .antMatchers("/**").authenticated()
                 .and().httpBasic();
     }

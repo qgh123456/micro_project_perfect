@@ -6,10 +6,12 @@ server:
 spring:
   application:
     name: FEBS-Register
+
   security:
     user:
       name: febs
       password: 123456
+
   boot:
     admin:
       client:
