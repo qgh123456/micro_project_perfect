@@ -14,7 +14,7 @@ import java.io.IOException;
 
 /**
  * @ProjectName: micro_project_perfect
- * @Description:
+ * @Description: 用于校验请求是否从网关中进来的
  * @Author: qiguohui
  * @Date: 2021/1/4 17:10
  */
