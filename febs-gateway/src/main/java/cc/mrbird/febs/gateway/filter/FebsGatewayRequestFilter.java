@@ -52,17 +52,24 @@ public class FebsGatewayRequestFilter extends ZuulFilter {
 
     @Override
     public Object run() {
+
         RequestContext ctx = RequestContext.getCurrentContext();
+        // 获取当前服务的id
         String serviceId = (String) ctx.get(FilterConstants.SERVICE_ID_KEY);
+        // 获取当前请求对象
         HttpServletRequest request = ctx.getRequest();
+        // 获取当前请求的地址
         String host = request.getRemoteHost();
+        // 获取当前请求的方法
         String method = request.getMethod();
+        // 获取当前请求的uri
         String uri = request.getRequestURI();
 
         log.info("请求URI：{}，HTTP Method：{}，请求IP：{}，ServerId：{}", uri, method, host, serviceId);
 
         // 禁止外部访问资源实现
         boolean shouldForward = true;
+        // 获取外部禁止访问的uri
         String forbidRequestUri = properties.getForbidRequestUri();
         String[] forbidRequestUris = StringUtils.splitByWholeSeparatorPreserveAllTokens(forbidRequestUri, ",");
         if (forbidRequestUris != null && ArrayUtils.isNotEmpty(forbidRequestUris)) {
@@ -89,6 +96,7 @@ public class FebsGatewayRequestFilter extends ZuulFilter {
             return null;
         }
 
+        // 在当前请求头上加上经过路由的标识
         byte[] token = Base64Utils.encode((FebsConstant.ZUUL_TOKEN_VALUE).getBytes());
         ctx.addZuulRequestHeader(FebsConstant.ZUUL_TOKEN_HEADER, new String(token));
         return null;

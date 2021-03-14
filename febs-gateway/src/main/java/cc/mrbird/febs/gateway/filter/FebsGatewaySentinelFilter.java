@@ -23,7 +23,7 @@ import java.util.Set;
 
 /**
  * @ProjectName: micro_project_perfect
- * @Description:
+ * @Description: 验证码限流
  * @Author: qiguohui
  * @Date: 2021/1/6 11:16
  */
