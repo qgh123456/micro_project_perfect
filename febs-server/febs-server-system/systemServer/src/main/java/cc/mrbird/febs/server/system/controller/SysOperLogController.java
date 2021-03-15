@@ -51,7 +51,7 @@ public class SysOperLogController {
      */
     @ApiOperation("保存")
     @PostMapping("/saveForMq")
-    public Result<Object> saveForMq(@RequestParam("messageData") String messageData){
+    public Result saveForMq(@RequestParam("messageData") String messageData){
         // 转化为对象
         SysOperLog sysOperLog = JSONObject.parseObject(messageData, SysOperLog.class);
         sysOperLogService.save(sysOperLog);
