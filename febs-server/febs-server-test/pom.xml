@@ -14,6 +14,14 @@
     <description>FEBS-Server-Test测试服务模块</description>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>cc.mrbird</groupId>
+            <artifactId>api_system</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
     <build>
         <plugins>
