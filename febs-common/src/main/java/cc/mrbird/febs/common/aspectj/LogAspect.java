@@ -46,8 +46,8 @@ import java.util.UUID;
  *
  * @author ruoyi
  */
-@Aspect
-@Component
+//@Aspect
+//@Component
 @ConditionalOnBean(type = "TokenStore")
 public class LogAspect {
     private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
