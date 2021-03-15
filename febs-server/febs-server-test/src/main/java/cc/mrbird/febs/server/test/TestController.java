@@ -1,5 +1,6 @@
 package cc.mrbird.febs.server.test;
 
+import cc.mrbird.febs.server.test.feign.IHelloServiceClient;
 import cc.mrbird.febs.server.test.service.IHelloService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ public class TestController {
 
     @Autowired
     private IHelloService helloService;
+    @Autowired
+    private IHelloServiceClient helloServiceClient;
 
     @GetMapping("test1")
     @PreAuthorize("hasAnyAuthority('user:add')")
@@ -43,6 +46,12 @@ public class TestController {
     public String hello(String name) {
         log.info("Feign调用febs-server-system的/hello服务...");
         return this.helloService.hello(name);
+    }
+
+    @GetMapping("hello2")
+    public String hello2(String name) {
+        log.info("Feign调用febs-server-system的/hello服务...");
+        return this.helloServiceClient.hello(name);
     }
 
 }
