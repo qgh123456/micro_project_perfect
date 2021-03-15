@@ -42,6 +42,11 @@ public class SecurityController {
         return principal;
     }
 
+    @GetMapping("getContent")
+    public String getContent() {
+        return "principal";
+    }
+
     @DeleteMapping("signout")
     public FebsResponse signout(HttpServletRequest request) throws FebsAuthException {
         String authorization = request.getHeader("Authorization");
