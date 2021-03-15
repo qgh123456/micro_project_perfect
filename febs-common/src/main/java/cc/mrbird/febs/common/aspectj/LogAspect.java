@@ -20,6 +20,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -223,6 +224,20 @@ public class LogAspect {
         manMap.put("messageId", messageId);
         manMap.put("messageData", messageData);
         manMap.put("createTime", createTime);
+        // 设置回调函数
+        rabbitTemplate.setMandatory(true);
+        rabbitTemplate.setReturnCallback(new RabbitTemplate.ReturnCallback() {
+            @Override
+            public void returnedMessage(Message message, int replyCode, String replyText, String exchange, String routingKey) {
+                // 发送短信或者邮件，记录到文件中
+                System.out.println("ReturnCallback:     "+"消息："+message);
+                System.out.println("ReturnCallback:     "+"回应码："+replyCode);
+                System.out.println("ReturnCallback:     "+"回应信息："+replyText);
+                System.out.println("ReturnCallback:     "+"交换机："+exchange);
+                System.out.println("ReturnCallback:     "+"路由键："+routingKey);
+            }
+        });
+
         rabbitTemplate.convertAndSend("topicOpLogExchange", "topic.opLog", manMap);
         return "ok";
     }
