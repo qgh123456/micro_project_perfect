@@ -38,6 +38,7 @@ public class ValidateCodeService {
      * @param response HttpServletResponse
      */
     public void create(HttpServletRequest request, HttpServletResponse response) throws IOException, ValidateCodeException {
+
         String key = request.getParameter("key");
         if (StringUtils.isBlank(key)) {
             throw new ValidateCodeException("验证码key不能为空");
