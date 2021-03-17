@@ -8,6 +8,8 @@ import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.common.utils.FebsUtil;
 import cc.mrbird.febs.server.system.Service.IUserService;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
 import org.hibernate.validator.constraints.NotBlank;
@@ -17,6 +19,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,48 +37,32 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-  /*  @PostMapping("/saveUser")
-    public Result<User> saveUser(@RequestBody SystemUser user){
-        this.userService.createUser(user);
-    }*/
+    @GetMapping("/pageQuery")
+    public Result getList(@ApiParam(name = "pageNum", value = "当前页码", defaultValue = "1")
+                                @RequestParam(value = "pageNum") Long pageNum,
+                          @ApiParam(name = "pageSize", value = "每页记录数", defaultValue = "10")
+                                @RequestParam(value = "pageSize") Long pageSize,
+                          @ApiParam(name = "systemUser", value = "查询对象", required = false)
+                                      SystemUser systemUser
+            ){
+        //封装分页
+        Page<SystemUser> pageParam = new Page<>(pageNum,pageSize);
+        userService.queryPage(pageParam,systemUser);
+        return Result.ok().data(pageParam);
 
-  /*  @GetMapping
-    public FebsResponse userList(QueryRequest queryRequest, SystemUser user) {
-        Map<String, Object> dataTable = FebsUtil.getDataTable(userService.findUserDetail(user, queryRequest));
-        return new FebsResponse().data(dataTable);
     }
 
-    @PostMapping
-    public void addUser(@Valid SystemUser user) throws FebsException {
-        try {
-            this.userService.createUser(user);
-        } catch (Exception e) {
-            String message = "新增用户失败";
-            log.error(message, e);
-            throw new FebsException(message);
+    @DeleteMapping("/deleteUserById/{userId}")
+    public Result deleteUserById(@ApiParam(name = "userId", value = "当前页码")
+                                     @PathVariable(value = "userId") Long userId){
+
+        boolean isRemoved = userService.removeById(userId);
+        if(isRemoved){
+            return Result.ok().message("删除成功~");
+        }
+        else {
+            return Result.error("删除失败~");
         }
     }
 
-    @PutMapping
-    public void updateUser(@Valid SystemUser user) throws FebsException {
-        try {
-            this.userService.updateUser(user);
-        } catch (Exception e) {
-            String message = "修改用户失败";
-            log.error(message, e);
-            throw new FebsException(message);
-        }
-    }
-
-    @DeleteMapping("/{userIds}")
-    public void deleteUsers(@NotBlank(message = "{required}") @PathVariable String userIds) throws FebsException {
-        try {
-            String[] ids = userIds.split(StringPool.COMMA);
-            this.userService.deleteUsers(ids);
-        } catch (Exception e) {
-            String message = "删除用户失败";
-            log.error(message, e);
-            throw new FebsException(message);
-        }
-    }*/
 }

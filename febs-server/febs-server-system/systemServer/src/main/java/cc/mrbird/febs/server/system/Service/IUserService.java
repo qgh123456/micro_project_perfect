@@ -3,6 +3,7 @@ package cc.mrbird.febs.server.system.Service;
 import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.system.SystemUser;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 public interface IUserService extends IService<SystemUser> {
@@ -36,4 +37,6 @@ public interface IUserService extends IService<SystemUser> {
      * @param userIds 用户 id数组
      */
     void deleteUsers(String[] userIds);
+
+    void queryPage(Page<SystemUser> pageParam, SystemUser systemUser);
 }

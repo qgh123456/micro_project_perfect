@@ -5,6 +5,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import feign.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @ProjectName: micro_project_perfect
@@ -12,6 +16,7 @@ import feign.Param;
  * @Author: qiguohui
  * @Date: 2021/1/7 11:50
  */
+@Repository
 public interface UserMapper extends BaseMapper<SystemUser> {
 
     /**
@@ -22,4 +27,8 @@ public interface UserMapper extends BaseMapper<SystemUser> {
      * @return Ipage
      */
     IPage<SystemUser> findUserDetailPage(Page page, @Param("user") SystemUser user);
+
+    List<SystemUser> queryPage(Map<String, Object> queryMap);
+
+    Long countByQueryMap(Map<String, Object> queryMap);
 }
