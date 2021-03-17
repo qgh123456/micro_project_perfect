@@ -67,6 +67,10 @@ public class FebsAuthorizationServerConfigure extends AuthorizationServerConfigu
         }
     }
 
+    /**
+     * 配置
+     * @param endpoints
+     */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints.tokenStore(tokenStore())
