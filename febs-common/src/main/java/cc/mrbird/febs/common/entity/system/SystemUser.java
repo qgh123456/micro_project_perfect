@@ -1,10 +1,7 @@
 package cc.mrbird.febs.common.entity.system;
 
 import cc.mrbird.febs.common.annotation.IsMobile;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -146,5 +143,9 @@ public class SystemUser implements Serializable {
 
     @TableField(exist = false)
     private String roleName;
+
+    @TableLogic
+    private String delFlag;
+
 
 }
