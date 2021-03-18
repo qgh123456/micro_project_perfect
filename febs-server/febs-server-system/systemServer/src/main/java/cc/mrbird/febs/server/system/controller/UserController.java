@@ -15,10 +15,12 @@ import org.apache.catalina.User;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -54,15 +56,23 @@ public class UserController {
 
     @DeleteMapping("/deleteUserById/{userId}")
     public Result deleteUserById(@ApiParam(name = "userId", value = "当前页码")
-                                     @PathVariable(value = "userId") Long userId){
+                                     @PathVariable(value = "userId") String userId){
 
-        boolean isRemoved = userService.removeById(userId);
-        if(isRemoved){
-            return Result.ok().message("删除成功~");
+        String[] ids = StringUtils.split(userId, ",");
+        if(ids.length > 0){
+            List<String> idList = Arrays.asList(ids);
+            boolean isRemoved = userService.removeByIds(idList);
+            if(isRemoved){
+                return Result.ok().message("删除成功~");
+            }
+            else {
+                return Result.error("删除失败~");
+            }
         }
         else {
-            return Result.error("删除失败~");
+            return Result.error("请选择删除的数据~");
         }
+
     }
 
 }
