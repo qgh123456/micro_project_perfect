@@ -147,5 +147,11 @@ public class SystemUser implements Serializable {
     @TableLogic
     private String delFlag;
 
+    @TableField(exist = false)
+    private String field;
+
+    @TableField(exist = false)
+    private String order;
+
 
 }
