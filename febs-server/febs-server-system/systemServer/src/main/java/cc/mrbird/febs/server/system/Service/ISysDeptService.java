@@ -1,6 +1,8 @@
 package cc.mrbird.febs.server.system.Service;
 
+import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.server.system.vo.SysDept;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.List;
 
@@ -15,5 +17,9 @@ public interface ISysDeptService extends IService<SysDept> {
 
 
     List<SysDept> getDeptByParentId(Long parentId);
+
+    List<SysDept> getDepts(SysDept sysDept);
+
+    void getDeptTree(Page<SysDept> pageParam, SysDept sysDept);
 }
 

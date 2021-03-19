@@ -1,14 +1,17 @@
 package cc.mrbird.febs.server.system.Service.Impl;
 
+import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.server.system.Service.IUserRoleService;
 import cc.mrbird.febs.server.system.mapper.UserRoleMapper;
 import cc.mrbird.febs.server.system.vo.UserRole;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @ProjectName: micro_project_perfect
@@ -30,5 +33,10 @@ public class UserRoleServiceImpl extends ServiceImpl<UserRoleMapper, UserRole> i
     @Transactional
     public void deleteUserRolesByUserId(String[] userIds) {
         Arrays.stream(userIds).forEach(id -> baseMapper.deleteByUserId(Long.valueOf(id)));
+    }
+
+    @Override
+    public List<SystemUser> queryPage(SystemUser systemUser) {
+        return null;
     }
 }

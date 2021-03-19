@@ -7,6 +7,7 @@ import cc.mrbird.febs.server.system.Service.IUserService;
 import cc.mrbird.febs.server.system.mapper.UserMapper;
 import cc.mrbird.febs.server.system.vo.UserRole;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -16,9 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+
+import java.util.*;
 
 /**
  * @ProjectName: micro_project_perfect
@@ -32,8 +32,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
 
     @Autowired
     private IUserRoleService userRoleService;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public IPage<SystemUser> findUserDetail(SystemUser user, QueryRequest request) {
@@ -76,6 +80,32 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
         removeByIds(list);
         // 删除用户角色
         this.userRoleService.deleteUserRolesByUserId(userIds);
+    }
+
+    @Override
+    public void queryPage(Page<SystemUser> pageParam, SystemUser systemUser) {
+
+        Map<String,Object> queryMap = new HashMap<>();
+        queryMap.put("userName",systemUser.getUsername());
+        queryMap.put("deptName",systemUser.getDeptName());
+        Long pageNo = (pageParam.getCurrent() - 1) * pageParam.getSize();
+        queryMap.put("pageNo",pageNo);
+        queryMap.put("pageSize",pageParam.getSize());
+        String createTimeFrom = Optional.ofNullable(systemUser.getCreateTimeFrom()).map(t -> t.toString() + " 00:00:00").orElse(null);
+        String createTimeTo = Optional.ofNullable(systemUser.getCreateTimeTo()).map(t -> t.toString() + " 59:59:59").orElse(null);
+        queryMap.put("createTimeFrom",createTimeFrom);
+        queryMap.put("createTimeTo",createTimeTo);
+        queryMap.put("field",systemUser.getField());
+        queryMap.put("order",systemUser.getOrder());
+
+
+        // 根据条件查询
+        List<SystemUser> systemUsers = userMapper.queryPage(queryMap);
+        // 获取总数
+        Long count = userMapper.countByQueryMap(queryMap);
+        pageParam.setRecords(systemUsers);
+        pageParam.setTotal(count);
+
     }
 
     private void setUserRoles(SystemUser user, String[] roles) {
