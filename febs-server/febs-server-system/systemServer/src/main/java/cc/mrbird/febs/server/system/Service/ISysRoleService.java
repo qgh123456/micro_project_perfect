@@ -4,6 +4,8 @@ package cc.mrbird.febs.server.system.Service;
 import cc.mrbird.febs.server.system.vo.SysRole;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * 角色信息表
  *
@@ -14,5 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ISysRoleService extends IService<SysRole> {
 
 
+    List<SysRole> findAllRoles();
 }
 
