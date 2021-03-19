@@ -1,20 +1,56 @@
 package cc.mrbird.febs.common.utils;
 
+
+import cc.mrbird.febs.common.entity.Tree;
 import cc.mrbird.febs.common.entity.route.VueRouter;
-import jdk.nashorn.internal.ir.ContinueNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @ProjectName: micro_project_perfect
- * @Description:
- * @Author: qiguohui
- * @Date: 2021/2/1 16:41
+ * @author MrBird
  */
-public class TreeUtil {
+public abstract class TreeUtil {
 
     private final static String TOP_NODE_ID = "0";
+
+    /**
+     * 用于构建菜单或部门树
+     *
+     * @param nodes nodes
+     * @return <T> List<? extends Tree>
+     */
+    public static <T> List<? extends Tree<?>> build(List<? extends Tree<T>> nodes) {
+        if (nodes == null) {
+            return null;
+        }
+        List<Tree<T>> topNodes = new ArrayList<>();
+        nodes.forEach(node -> {
+            String pid = node.getParentId();
+            if (pid == null || TOP_NODE_ID.equals(pid)) {
+                topNodes.add(node);
+                return;
+            }
+            for (Tree<T> n : nodes) {
+                String id = n.getId();
+                if (id != null && id.equals(pid)) {
+                    if (n.getChildren() == null) {
+                        n.initChildren();
+                    }
+                    n.getChildren().add(node);
+                    node.setHasParent(true);
+                    n.setHasChildren(true);
+                    n.setHasParent(true);
+                    return;
+                }
+            }
+            if (topNodes.isEmpty()) {
+                topNodes.add(node);
+            }
+        });
+        return topNodes;
+    }
+
 
     /**
      * 构造前端路由
@@ -33,14 +69,14 @@ public class TreeUtil {
             String parentId = route.getParentId();
             if (parentId == null || TOP_NODE_ID.equals(parentId)) {
                 topRoutes.add(route);
-                // lambda 表达式通过return代替 break ,continue
                 return;
             }
             for (VueRouter<T> parent : routes) {
                 String id = parent.getId();
                 if (id != null && id.equals(parentId)) {
-                    if (parent.getChildren() == null)
+                    if (parent.getChildren() == null) {
                         parent.initChildren();
+                    }
                     parent.getChildren().add(route);
                     parent.setAlwaysShow(true);
                     parent.setHasChildren(true);
