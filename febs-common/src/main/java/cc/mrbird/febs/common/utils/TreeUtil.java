@@ -3,7 +3,6 @@ package cc.mrbird.febs.common.utils;
 
 import cc.mrbird.febs.common.entity.Tree;
 import cc.mrbird.febs.common.entity.route.VueRouter;
-
 import java.util.ArrayList;
 import java.util.List;
 
