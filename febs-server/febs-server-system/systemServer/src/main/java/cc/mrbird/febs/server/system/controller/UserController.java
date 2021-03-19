@@ -7,11 +7,13 @@ import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.common.utils.FebsUtil;
 import cc.mrbird.febs.server.system.Service.IUserService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
+import org.apache.catalina.Wrapper;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -47,6 +49,7 @@ public class UserController {
                           @ApiParam(name = "systemUser", value = "查询对象", required = false)
                                       SystemUser systemUser
             ){
+
         //封装分页
         Page<SystemUser> pageParam = new Page<>(pageNum,pageSize);
         userService.queryPage(pageParam,systemUser);
@@ -55,7 +58,7 @@ public class UserController {
     }
 
     @DeleteMapping("/deleteUserById/{userId}")
-    public Result deleteUserById(@ApiParam(name = "userId", value = "当前页码")
+    public Result deleteUserById(@ApiParam(name = "userId", value = "用户id")
                                      @PathVariable(value = "userId") String userId){
 
         String[] ids = StringUtils.split(userId, ",");
@@ -74,5 +77,19 @@ public class UserController {
         }
 
     }
+
+    @GetMapping("/check/{username}")
+    public Result check(@ApiParam(name = "username", value = "用户名称")
+                            @PathVariable(value = "username") String username){
+
+        // 构建查询参数
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("username",username);
+        int count = userService.count(queryWrapper);
+        return Result.ok().data(count);
+
+    }
+
+
 
 }

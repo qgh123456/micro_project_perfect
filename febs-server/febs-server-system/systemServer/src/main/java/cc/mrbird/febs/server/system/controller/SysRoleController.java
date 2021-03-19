@@ -1,9 +1,13 @@
 package cc.mrbird.febs.server.system.controller;
 
+import cc.mrbird.febs.common.entity.Result;
 import cc.mrbird.febs.server.system.Service.ISysRoleService;
+import cc.mrbird.febs.server.system.vo.SysRole;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 角色信息表
@@ -14,10 +18,19 @@ import org.springframework.web.bind.annotation.*;
  */
 @Api(tags = "角色信息表 管理")
 @RestController
-@RequestMapping("/sysrole")
+@RequestMapping("/role")
 public class SysRoleController {
     @Autowired
     private ISysRoleService sysRoleService;
+
+    @GetMapping("/options")
+    public Result options(){
+
+        List<SysRole> allRoles = sysRoleService.findAllRoles();
+        return Result.ok().data(allRoles);
+    }
+
+
 
 
 }
