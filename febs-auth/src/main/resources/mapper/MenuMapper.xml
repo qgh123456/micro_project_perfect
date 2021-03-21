@@ -7,8 +7,8 @@
             DISTINCT sm.perms
         from
                t_user tu
-        inner join sys_user_role sur on tu.user_id = sur.user_id
-        inner join sys_role_menu srm on srm.role_id = sur.role_id
+        inner join t_user_role sur on tu.user_id = sur.user_id
+        inner join t_role_menu srm on srm.role_id = sur.role_id
         inner join t_menu sm on sm.menu_id = srm.menu_id
         where
             sm.del_flag = '0'
