@@ -21,9 +21,9 @@
             GROUP_CONCAT(r.ROLE_NAME) roleName
         FROM
             t_user u
-        LEFT JOIN sys_dept d ON (u.dept_id = d.dept_id)
-        LEFT JOIN sys_user_role ur ON (u.user_id = ur.user_id)
-        LEFT JOIN sys_role r ON r.role_id = ur.role_id
+        LEFT JOIN t_dept d ON (u.dept_id = d.dept_id)
+        LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id)
+        LEFT JOIN t_role r ON r.role_id = ur.role_id
         WHERE 1 = 1
         <if test="user.username != null and user.username != ''">
             AND u.username = #{user.username}
@@ -52,4 +52,81 @@
         group by u.username,u.user_id,u.email,u.mobile,u.status,u.create_time,u.ssex,
         u.dept_id,u.last_login_time,u.modify_time,u.description,u.avatar
     </select>
+
+    <select id="queryPage" parameterType="java.util.Map" resultType="cc.mrbird.febs.common.entity.system.SystemUser">
+         SELECT
+            u.user_id userId,
+            u.username,
+            u.email,
+            u.mobile,
+            u.status,
+            u.create_time createTime,
+            u.ssex sex,
+            u.dept_id deptId,
+            u.last_login_time lastLoginTime,
+            u.modify_time modifyTime,
+            u.description,
+            u.avatar,
+            d.dept_name
+        FROM
+            t_user u
+        LEFT JOIN t_dept d ON (u.dept_id = d.dept_id)
+        <where>
+            u.del_flag = '0'
+            <if test="userName != null and userName != ''">
+                AND u.username like concat('%',#{userName},'%')
+            </if>
+            <if test="deptName != null and deptName != ''">
+                and d.dept_name like concat('%',#{deptName},'%')
+            </if>
+            <if test="createTimeFrom != null and createTimeFrom != ''">
+                and u.CREATE_TIME <![CDATA[>=]]> #{createTimeFrom}
+            </if>
+            <if test="createTimeTo != null and createTimeTo != ''">
+                and u.CREATE_TIME <![CDATA[<=]]> #{createTimeTo}
+            </if>
+        </where>
+        <choose>
+            <when test="field !=null and field == 'createTime'">
+                order by u.CREATE_TIME
+                <if test="order != null and order == 'descending'">
+                    desc
+                </if>
+                <if test="order != null and order == 'ascending'">
+                    asc
+                </if>
+            </when >
+            <otherwise>
+                order by u.USER_ID desc
+            </otherwise>
+        </choose>
+        <if test="pageNo != null and pageSize != null">
+            limit #{pageNo},#{pageSize}
+        </if>
+
+    </select>
+
+    <select id="countByQueryMap" resultType="java.lang.Long">
+        select
+            count(u.USER_ID)
+        from
+            t_user u
+        LEFT JOIN t_dept d ON u.dept_id = d.dept_id
+        <where>
+            u.del_flag = '0'
+            <if test="userName != null and userName != ''">
+                AND u.username like concat('%',#{userName},'%')
+            </if>
+            <if test="deptName != null and deptName != ''">
+                and d.dept_name like concat('%',#{deptName},'%')
+            </if>
+            <if test="createTimeFrom != null and createTimeFrom != ''">
+                and u.CREATE_TIME <![CDATA[>=]]> #{createTimeFrom}
+            </if>
+            <if test="createTimeTo != null and createTimeTo != ''">
+                and u.CREATE_TIME <![CDATA[<=]]> #{createTimeTo}
+            </if>
+        </where>
+    </select>
+
 </mapper>
