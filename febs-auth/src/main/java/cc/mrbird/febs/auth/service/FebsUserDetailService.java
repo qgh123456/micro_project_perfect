@@ -37,7 +37,8 @@ public class FebsUserDetailService implements UserDetailsService {
             boolean notLocked = false;
             if (StringUtils.equals(SystemUser.STATUS_VALID, systemUser.getStatus()))
                 notLocked = true;
-            FebsAuthUser authUser = new FebsAuthUser(systemUser.getUsername(), systemUser.getPassword(), true, true, true, notLocked,
+            FebsAuthUser authUser = new FebsAuthUser(systemUser.getUsername(), systemUser.getPassword(), true,
+                    true, true, notLocked,
                     AuthorityUtils.commaSeparatedStringToAuthorityList(permissions));
 
             // 克隆
