@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @date 2021-01-20 18:16:52
  */
 @Data
-@TableName("sys_role_menu")
+@TableName("t_role_menu")
 public class SysRoleMenu implements Serializable {
 	private static final long serialVersionUID = 1L;
 

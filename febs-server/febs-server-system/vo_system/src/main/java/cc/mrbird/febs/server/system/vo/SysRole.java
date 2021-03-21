@@ -1,6 +1,7 @@
 package cc.mrbird.febs.server.system.vo;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -75,6 +76,7 @@ public class SysRole implements Serializable {
 	/**
 	 * 删除标志（0代表存在 2代表删除）
 	 */
+	@TableLogic
 	private String delFlag;
 
 }

@@ -1,6 +1,8 @@
 package cc.mrbird.febs.server.system.vo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -15,7 +17,7 @@ import java.util.Date;
  * @date 2021-01-20 18:16:51
  */
 @Data
-@TableName("sys_dept")
+@TableName("t_dept")
 public class SysDept implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -31,7 +33,7 @@ public class SysDept implements Serializable {
 	/**
 	 * 祖级列表
 	 */
-	private String ancestors;
+//	private String ancestors;
 	/**
 	 * 部门名称
 	 */
@@ -40,26 +42,11 @@ public class SysDept implements Serializable {
 	 * 显示顺序
 	 */
 	private Integer orderNum;
-	/**
-	 * 负责人
-	 */
-	private String leader;
-	/**
-	 * 联系电话
-	 */
-	private String phone;
-	/**
-	 * 邮箱
-	 */
-	private String email;
-	/**
-	 * 部门状态（0正常 1停用）
-	 */
-	private String status;
+
 	/**
 	 * 创建者
 	 */
-	private String createBy;
+//	private String createBy;
 	/**
 	 * 创建时间
 	 */
@@ -67,14 +54,24 @@ public class SysDept implements Serializable {
 	/**
 	 * 更新者
 	 */
-	private String updateBy;
+//	private String updateBy;
+
+//	private String lev;
 	/**
 	 * 更新时间
 	 */
-	private Date updateTime;
+	@TableField(value = "MODIFY_TIME")
+	private Date modifyTime;
 	/**
 	 * 删除标志（0代表存在 2代表删除）
 	 */
+	@TableLogic
 	private String delFlag;
+
+	@TableField(exist = false)
+	private String createTimeFrom;
+
+	@TableField(exist = false)
+	private String createTimeTo;
 
 }

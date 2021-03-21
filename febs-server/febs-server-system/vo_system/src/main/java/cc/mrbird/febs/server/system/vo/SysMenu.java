@@ -1,6 +1,8 @@
 package cc.mrbird.febs.server.system.vo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -87,7 +89,8 @@ public class SysMenu implements Serializable {
 	/**
 	 * 更新时间
 	 */
-	private Date updateTime;
+	@TableField(value = "MODIFY_TIME")
+	private Date modifyTime;
 	/**
 	 * 备注
 	 */
@@ -95,6 +98,7 @@ public class SysMenu implements Serializable {
 	/**
 	 * 0 未删除 1 已删除
 	 */
+	@TableLogic
 	private String delFlag;
 
 }
