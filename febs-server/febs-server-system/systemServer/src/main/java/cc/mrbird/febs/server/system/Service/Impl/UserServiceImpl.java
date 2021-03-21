@@ -1,6 +1,7 @@
 package cc.mrbird.febs.server.system.Service.Impl;
 
 import cc.mrbird.febs.common.entity.QueryRequest;
+import cc.mrbird.febs.common.entity.constant.StringConstant;
 import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.server.system.Service.IUserRoleService;
 import cc.mrbird.febs.server.system.Service.IUserService;
@@ -12,6 +13,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -56,6 +58,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
         // 保存用户角色
         String[] roles = user.getRoleId().split(StringPool.COMMA);
         setUserRoles(user, roles);
+        // 保存用户数据权限关联关系
+        String[] deptIds = StringUtils.splitByWholeSeparatorPreserveAllTokens(user.getDeptIds(), StringConstant.COMMA);
+//        setUserDataPermissions(user, deptIds);
     }
 
     @Override
@@ -116,4 +121,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
             userRoleService.save(ur);
         });
     }
+
+/*    private void setUserDataPermissions(SystemUser user, String[] deptIds) {
+        List<UserDataPermission> userDataPermissions = new ArrayList<>();
+        Arrays.stream(deptIds).forEach(deptId -> {
+            UserDataPermission permission = new UserDataPermission();
+            permission.setDeptId(Long.valueOf(deptId));
+            permission.setUserId(user.getUserId());
+            userDataPermissions.add(permission);
+        });
+        userDataPermissionService.saveBatch(userDataPermissions);
+    }*/
 }

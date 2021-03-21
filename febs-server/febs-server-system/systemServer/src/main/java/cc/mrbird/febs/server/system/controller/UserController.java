@@ -90,6 +90,11 @@ public class UserController {
 
     }
 
-
+    @PostMapping("/addUser")
+    @PreAuthorize("hasAuthority('user:add')")
+    public Result addUser(SystemUser systemUser){
+        userService.createUser(systemUser);
+        return Result.ok();
+    }
 
 }

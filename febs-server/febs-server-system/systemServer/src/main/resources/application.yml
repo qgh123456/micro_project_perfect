@@ -33,7 +33,9 @@ spring:
     port: 5672
     username: febs
     password: 123456
-
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
 
 eureka:
   instance:
@@ -90,13 +92,14 @@ management:
       show-details: ALWAYS
 
 mybatis-plus:
-  type-aliases-package: cc.mrbird.febs.common.entity.system
+  type-aliases-package: cc.mrbird.febs.common.entity.system,cc.mrbird.febs.server.system.vo
   mapper-locations: classpath:mapper/*.xml
   configuration:
     jdbc-type-for-null: null
   global-config:
-    banner: false
+    banner: true
     db-config:
+      logic-delete-field: delFlag
       logic-delete-value: 1
       logic-not-delete-value: 0
 

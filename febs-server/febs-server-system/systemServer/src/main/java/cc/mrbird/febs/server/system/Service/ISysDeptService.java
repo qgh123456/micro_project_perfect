@@ -1,10 +1,12 @@
 package cc.mrbird.febs.server.system.Service;
 
+import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.server.system.vo.SysDept;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 部门表
@@ -20,6 +22,8 @@ public interface ISysDeptService extends IService<SysDept> {
 
     List<SysDept> getDepts(SysDept sysDept);
 
-    void getDeptTree(Page<SysDept> pageParam, SysDept sysDept);
+    Map<String, Object> getDeptTree(QueryRequest requestQuery, SysDept sysDept);
+
+    List<SysDept> findDepts(SysDept sysDept, QueryRequest request);
 }
 

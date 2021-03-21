@@ -2,7 +2,9 @@ package cc.mrbird.febs.server.system.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.Result;
 import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.server.system.Service.ISysDeptService;
@@ -47,12 +49,13 @@ public class SysDeptController {
     }
 
     @GetMapping("/getDeptTree")
-    public Result getDeptTree(@ApiParam(name = "SysDept", value = "查询对象", required = false) SysDept sysDept){
+    public Result getDeptTree(@ApiParam(name = "QueryRequest", value = "查询对象", required = false)
+                                    QueryRequest requestQuery,
+                              @ApiParam(name = "SysDept", value = "查询对象", required = false)
+                                    SysDept sysDept){
 
-        //封装分页
-        Page<SysDept> pageParam = new Page<>();
-        sysDeptService.getDeptTree(pageParam,sysDept);
-        return Result.ok().data(pageParam);
+        Map<String, Object> deptTree = sysDeptService.getDeptTree(requestQuery, sysDept);
+        return Result.ok().data(deptTree);
     }
 
 }
