@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.server.system.mapper.UserDataPermissionMapper">
+
+    <insert id="saveBatch" parameterType="java.util.List">
+        <if test="list != null and list.size > 0">
+            insert into t_user_data_permission (`USER_ID`,`DEPT_ID`)
+            values
+            <foreach collection="list" item="item" separator="," >
+                (#{item.userId},#{item.deptId})
+            </foreach>
+        </if>
+    </insert>
+</mapper>

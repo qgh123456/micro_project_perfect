@@ -1,7 +1,7 @@
 package cc.mrbird.febs.server.system.controller;
 
 import cc.mrbird.febs.common.entity.Result;
-import cc.mrbird.febs.server.system.Service.ISysRoleService;
+import cc.mrbird.febs.server.system.service.ISysRoleService;
 import cc.mrbird.febs.server.system.vo.SysRole;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;

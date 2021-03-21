@@ -1,4 +1,4 @@
-package cc.mrbird.febs.server.system.Service;
+package cc.mrbird.febs.server.system.service;
 
 import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.system.SystemUser;

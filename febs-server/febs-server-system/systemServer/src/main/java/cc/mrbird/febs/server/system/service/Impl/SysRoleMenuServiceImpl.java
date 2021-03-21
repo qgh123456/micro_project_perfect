@@ -1,6 +1,6 @@
-package cc.mrbird.febs.server.system.Service.Impl;
+package cc.mrbird.febs.server.system.service.Impl;
 
-import cc.mrbird.febs.server.system.Service.ISysRoleMenuService;
+import cc.mrbird.febs.server.system.service.ISysRoleMenuService;
 import cc.mrbird.febs.server.system.mapper.SysRoleMenuMapper;
 import cc.mrbird.febs.server.system.vo.SysRoleMenu;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

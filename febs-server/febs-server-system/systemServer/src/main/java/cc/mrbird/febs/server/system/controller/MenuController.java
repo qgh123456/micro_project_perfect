@@ -3,7 +3,7 @@ package cc.mrbird.febs.server.system.controller;
 import cc.mrbird.febs.common.entity.Result;
 import cc.mrbird.febs.common.entity.route.VueRouter;
 import cc.mrbird.febs.common.entity.system.Menu;
-import cc.mrbird.febs.server.system.Service.IMenuService;
+import cc.mrbird.febs.server.system.service.IMenuService;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;

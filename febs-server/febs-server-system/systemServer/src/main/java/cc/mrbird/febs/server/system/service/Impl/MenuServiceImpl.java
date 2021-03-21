@@ -1,10 +1,10 @@
-package cc.mrbird.febs.server.system.Service.Impl;
+package cc.mrbird.febs.server.system.service.Impl;
 
 import cc.mrbird.febs.common.entity.route.RouterMeta;
 import cc.mrbird.febs.common.entity.route.VueRouter;
 import cc.mrbird.febs.common.entity.system.Menu;
 import cc.mrbird.febs.common.utils.TreeUtil;
-import cc.mrbird.febs.server.system.Service.IMenuService;
+import cc.mrbird.febs.server.system.service.IMenuService;
 import cc.mrbird.febs.server.system.mapper.MenuMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;

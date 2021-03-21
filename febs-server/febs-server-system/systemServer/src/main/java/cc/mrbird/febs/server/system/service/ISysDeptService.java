@@ -1,9 +1,7 @@
-package cc.mrbird.febs.server.system.Service;
+package cc.mrbird.febs.server.system.service;
 
 import cc.mrbird.febs.common.entity.QueryRequest;
-import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.server.system.vo.SysDept;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.List;
 import java.util.Map;

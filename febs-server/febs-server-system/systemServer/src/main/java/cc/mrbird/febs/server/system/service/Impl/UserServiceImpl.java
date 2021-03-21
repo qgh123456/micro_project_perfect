@@ -1,14 +1,15 @@
-package cc.mrbird.febs.server.system.Service.Impl;
+package cc.mrbird.febs.server.system.service.Impl;
 
 import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.constant.StringConstant;
 import cc.mrbird.febs.common.entity.system.SystemUser;
-import cc.mrbird.febs.server.system.Service.IUserRoleService;
-import cc.mrbird.febs.server.system.Service.IUserService;
+import cc.mrbird.febs.server.system.mapper.UserDataPermissionMapper;
+import cc.mrbird.febs.server.system.service.IUserRoleService;
+import cc.mrbird.febs.server.system.service.IUserService;
 import cc.mrbird.febs.server.system.mapper.UserMapper;
+import cc.mrbird.febs.server.system.vo.UserDataPermission;
 import cc.mrbird.febs.server.system.vo.UserRole;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -41,6 +42,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private UserDataPermissionMapper userDataPermissionMapper;
+
     @Override
     public IPage<SystemUser> findUserDetail(SystemUser user, QueryRequest request) {
         Page<SystemUser> page = new Page<>(request.getPageNum(), request.getPageSize());
@@ -60,7 +64,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
         setUserRoles(user, roles);
         // 保存用户数据权限关联关系
         String[] deptIds = StringUtils.splitByWholeSeparatorPreserveAllTokens(user.getDeptIds(), StringConstant.COMMA);
-//        setUserDataPermissions(user, deptIds);
+        setUserDataPermissions(user, deptIds);
     }
 
     @Override
@@ -122,7 +126,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
         });
     }
 
-/*    private void setUserDataPermissions(SystemUser user, String[] deptIds) {
+    private void setUserDataPermissions(SystemUser user, String[] deptIds) {
         List<UserDataPermission> userDataPermissions = new ArrayList<>();
         Arrays.stream(deptIds).forEach(deptId -> {
             UserDataPermission permission = new UserDataPermission();
@@ -130,6 +134,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
             permission.setUserId(user.getUserId());
             userDataPermissions.add(permission);
         });
-        userDataPermissionService.saveBatch(userDataPermissions);
-    }*/
+        userDataPermissionMapper.saveBatch(userDataPermissions);
+    }
 }

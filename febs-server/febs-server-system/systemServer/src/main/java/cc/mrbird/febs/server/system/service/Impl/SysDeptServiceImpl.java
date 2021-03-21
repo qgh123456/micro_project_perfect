@@ -1,18 +1,15 @@
-package cc.mrbird.febs.server.system.Service.Impl;
+package cc.mrbird.febs.server.system.service.Impl;
 
 import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.Tree;
 import cc.mrbird.febs.common.entity.constant.FebsConstant;
 import cc.mrbird.febs.common.entity.constant.PageConstant;
-import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.common.utils.SortUtil;
 import cc.mrbird.febs.common.utils.TreeUtil;
-import cc.mrbird.febs.server.system.Service.ISysDeptService;
+import cc.mrbird.febs.server.system.service.ISysDeptService;
 import cc.mrbird.febs.server.system.mapper.SysDeptMapper;
 import cc.mrbird.febs.server.system.vo.DeptTree;
 import cc.mrbird.febs.server.system.vo.SysDept;
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +19,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 

@@ -1,6 +1,6 @@
-package cc.mrbird.febs.server.system.Service.Impl;
+package cc.mrbird.febs.server.system.service.Impl;
 
-import cc.mrbird.febs.server.system.Service.ISysRoleService;
+import cc.mrbird.febs.server.system.service.ISysRoleService;
 import cc.mrbird.febs.server.system.mapper.SysRoleMapper;
 import cc.mrbird.febs.server.system.vo.SysRole;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;

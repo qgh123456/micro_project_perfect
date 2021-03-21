@@ -3,7 +3,7 @@ package cc.mrbird.febs.server.system.controller;
 import java.util.Arrays;
 import cc.mrbird.febs.common.entity.Result;
 import cc.mrbird.febs.common.entity.system.SysOperLog;
-import cc.mrbird.febs.server.system.Service.ISysOperLogService;
+import cc.mrbird.febs.server.system.service.ISysOperLogService;
 import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

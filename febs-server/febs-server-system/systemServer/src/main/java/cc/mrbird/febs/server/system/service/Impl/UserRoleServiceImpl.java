@@ -1,11 +1,10 @@
-package cc.mrbird.febs.server.system.Service.Impl;
+package cc.mrbird.febs.server.system.service.Impl;
 
 import cc.mrbird.febs.common.entity.system.SystemUser;
-import cc.mrbird.febs.server.system.Service.IUserRoleService;
+import cc.mrbird.febs.server.system.service.IUserRoleService;
 import cc.mrbird.febs.server.system.mapper.UserRoleMapper;
 import cc.mrbird.febs.server.system.vo.UserRole;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;

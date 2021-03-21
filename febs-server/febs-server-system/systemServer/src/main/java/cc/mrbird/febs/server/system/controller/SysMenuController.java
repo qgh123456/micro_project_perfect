@@ -1,10 +1,8 @@
 package cc.mrbird.febs.server.system.controller;
 
-import cc.mrbird.febs.server.system.Service.ISysMenuService;
+import cc.mrbird.febs.server.system.service.ISysMenuService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 /**
