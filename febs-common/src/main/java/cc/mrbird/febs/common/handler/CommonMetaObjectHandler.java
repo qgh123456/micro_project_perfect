@@ -19,11 +19,11 @@ public class CommonMetaObjectHandler implements MetaObjectHandler {
 	@Override
 	public void insertFill(MetaObject metaObject) {
 		this.setFieldValByName("createTime", new Date(), metaObject);//自动添加数据（插入）
-		this.setFieldValByName("updateTime", new Date(), metaObject);//自动添加数据（插入）
+		this.setFieldValByName("modifyTime", new Date(), metaObject);//自动添加数据（插入）
 	}
 
 	@Override
 	public void updateFill(MetaObject metaObject) {
-		this.setFieldValByName("updateTime", new Date(), metaObject);//自动添加数据（修改）
+		this.setFieldValByName("modifyTime", new Date(), metaObject);//自动添加数据（修改）
 	}
 }
