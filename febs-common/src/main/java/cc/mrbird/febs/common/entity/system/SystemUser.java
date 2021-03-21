@@ -110,17 +110,23 @@ public class SystemUser implements Serializable {
     @NotBlank(message = "{required}")
     private String sex;
 
+    @TableField("IS_TAB")
+    @NotBlank(message = "{required}")
+    private String isTab;
+
     /**
      * 头像
      */
     @TableField("AVATAR")
     private String avatar;
 
+    @TableField("THEME")
+    private String theme;
+
     /**
      * 描述
      */
     @TableField("DESCRIPTION")
-
     @Size(max = 100, message = "{noMoreThan}")
     private String description;
 
