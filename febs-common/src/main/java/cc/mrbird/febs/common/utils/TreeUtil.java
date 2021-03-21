@@ -23,31 +23,22 @@ public abstract class TreeUtil {
         if (nodes == null) {
             return null;
         }
-        List<Tree<T>> topNodes = new ArrayList<>();
-        nodes.forEach(node -> {
-            String pid = node.getParentId();
-            if (pid == null || TOP_NODE_ID.equals(pid)) {
-                topNodes.add(node);
-                return;
+        List<Tree<T>> treeList = new ArrayList<>();
+        for(Tree<T> item : nodes){
+            if(item.getParentId() == null || "0".equals(item.getParentId())){
+                treeList.add(item);
             }
-            for (Tree<T> n : nodes) {
-                String id = n.getId();
-                if (id != null && id.equals(pid)) {
-                    if (n.getChildren() == null) {
-                        n.initChildren();
+            // 找到子
+            for(Tree<T> treeNode : nodes){
+                if(treeNode.getParentId().equals(item.getId())){
+                    if(item.getChildren() == null){
+                        item.setChildren(new ArrayList<>());
                     }
-                    n.getChildren().add(node);
-                    node.setHasParent(true);
-                    n.setHasChildren(true);
-                    n.setHasParent(true);
-                    return;
+                    item.getChildren().add(treeNode);
                 }
             }
-            if (topNodes.isEmpty()) {
-                topNodes.add(node);
-            }
-        });
-        return topNodes;
+        }
+        return treeList;
     }
 
 
