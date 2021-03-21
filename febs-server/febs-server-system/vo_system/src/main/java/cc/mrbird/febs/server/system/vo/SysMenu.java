@@ -17,7 +17,7 @@ import java.util.Date;
  * @date 2021-01-20 18:16:51
  */
 @Data
-@TableName("sys_menu")
+@TableName("t_menu")
 public class SysMenu implements Serializable {
 	private static final long serialVersionUID = 1L;
 
