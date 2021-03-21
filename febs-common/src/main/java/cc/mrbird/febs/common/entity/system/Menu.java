@@ -75,8 +75,8 @@ public class Menu implements Serializable {
     /**
      * 修改时间
      */
-    @TableField(value = "update_time",fill = FieldFill.INSERT_UPDATE)
-    private Date updateTime;
+    @TableField(value = "MODIFY_TIME",fill = FieldFill.INSERT_UPDATE)
+    private Date modifyTime;
 
 
     /**
@@ -88,6 +88,7 @@ public class Menu implements Serializable {
     /**
      * 0 未删除 1 已删除
      */
+    @TableLogic
     @TableField("del_flag")
     private String delFlag;
 
