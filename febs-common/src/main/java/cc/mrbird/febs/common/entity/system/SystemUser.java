@@ -153,5 +153,6 @@ public class SystemUser implements Serializable {
     @TableField(exist = false)
     private String order;
 
-
+    @TableField(exist = false)
+    private String deptIds;
 }
