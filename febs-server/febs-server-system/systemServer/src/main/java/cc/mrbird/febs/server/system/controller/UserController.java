@@ -2,12 +2,14 @@ package cc.mrbird.febs.server.system.controller;
 
 import cc.mrbird.febs.common.entity.Result;
 import cc.mrbird.febs.common.entity.system.SystemUser;
+import cc.mrbird.febs.server.system.service.IUserDataPermissionService;
 import cc.mrbird.febs.server.system.service.IUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
@@ -30,6 +32,9 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private IUserDataPermissionService userDataPermissionService;
 
     @GetMapping("/pageQuery")
     public Result getList(@ApiParam(name = "pageNum", value = "当前页码", defaultValue = "1")
@@ -85,6 +90,21 @@ public class UserController {
     public Result addUser(SystemUser systemUser){
         userService.createUser(systemUser);
         return Result.ok();
+    }
+
+    @PostMapping("/updateUser")
+    @PreAuthorize("hasAuthority('user:update')")
+    public Result updateUser(SystemUser systemUser){
+        userService.updateUser(systemUser);
+        return Result.ok();
+    }
+
+    @GetMapping("/getDetail/{userId}")
+    @PreAuthorize("hasAuthority('user:update')")
+    public Result getDetail(@PathVariable(value = "userId") Long userId){
+
+        String dataPermissions = this.userDataPermissionService.findByUserId(userId.toString());
+        return Result.ok().data(dataPermissions);
     }
 
 }

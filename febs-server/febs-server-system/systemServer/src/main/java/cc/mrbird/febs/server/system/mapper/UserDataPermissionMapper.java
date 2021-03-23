@@ -14,4 +14,6 @@ public interface UserDataPermissionMapper extends BaseMapper<UserDataPermission>
 
 
     void saveBatch(List<UserDataPermission> userDataPermissions);
+
+
 }

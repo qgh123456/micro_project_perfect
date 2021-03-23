@@ -39,4 +39,5 @@ public class UserDataPermissionServiceImpl extends ServiceImpl<UserDataPermissio
         wrapper.eq(UserDataPermission::getUserId, userId);
         return this.baseMapper.selectList(wrapper).stream().map(permission -> String.valueOf(permission.getDeptId())).collect(Collectors.joining(StringConstant.COMMA));
     }
+
 }

@@ -77,9 +77,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
         user.setModifyTime(new Date());
         updateById(user);
 
-        userRoleService.remove(new LambdaQueryWrapper<UserRole>().eq(UserRole::getUserId, user.getUserId()));
-        String[] roles = user.getRoleId().split(StringPool.COMMA);
+
+        String[] userIds = {String.valueOf(user.getUserId())};
+        userRoleService.deleteUserRolesByUserId(userIds);
+        String[] roles = StringUtils.splitByWholeSeparatorPreserveAllTokens(user.getRoleId(), StringConstant.COMMA);
         setUserRoles(user, roles);
+
+        Arrays.stream(userIds).forEach(id -> userDataPermissionMapper.deleteById(Long.valueOf(id)));
+        String[] deptIds = StringUtils.splitByWholeSeparatorPreserveAllTokens(user.getDeptIds(), StringConstant.COMMA);
+        setUserDataPermissions(user, deptIds);
     }
 
     @Override
