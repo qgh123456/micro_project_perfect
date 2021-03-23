@@ -6,6 +6,7 @@ import cc.mrbird.febs.common.exception.FebsException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Path;
-import java.nio.file.AccessDeniedException;
 import java.util.List;
 import java.util.Set;
 
@@ -26,12 +26,6 @@ import java.util.Set;
  */
 @Slf4j
 public class BaseExceptionHandler {
-    @ExceptionHandler(value = Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public FebsResponse handleException(Exception e) {
-        log.error("系统内部异常，异常信息", e);
-        return new FebsResponse().message("系统内部异常");
-    }
 
     @ExceptionHandler(value = FebsAuthException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -89,5 +83,12 @@ public class BaseExceptionHandler {
         }
         message = new StringBuilder(message.substring(0, message.length() - 1));
         return new FebsResponse().message(message.toString());
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public FebsResponse handleException(Exception e) {
+        log.error("系统内部异常，异常信息", e);
+        return new FebsResponse().message("系统内部异常");
     }
 }
