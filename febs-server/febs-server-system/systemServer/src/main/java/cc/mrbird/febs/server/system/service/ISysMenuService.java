@@ -1,7 +1,11 @@
 package cc.mrbird.febs.server.system.service;
 
+import cc.mrbird.febs.server.system.vo.MenuTree;
 import cc.mrbird.febs.server.system.vo.SysMenu;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 菜单权限表
@@ -12,5 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ISysMenuService extends IService<SysMenu> {
 
+    Map<String, Object> getMenuTree(String menuName);
 }
 
