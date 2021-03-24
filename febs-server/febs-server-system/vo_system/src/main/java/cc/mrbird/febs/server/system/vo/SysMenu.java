@@ -1,9 +1,6 @@
 package cc.mrbird.febs.server.system.vo;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -22,83 +19,78 @@ public class SysMenu implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 菜单ID
+	 * 菜单/按钮ID
 	 */
-	@TableId
+	@TableId(value = "menu_id", type = IdType.AUTO)
 	private Long menuId;
+
 	/**
-	 * 菜单名称
+	 * 上级菜单ID
 	 */
-	private String menuName;
-	/**
-	 * 父菜单ID
-	 */
+	@TableField("parent_id")
 	private Long parentId;
+
 	/**
-	 * 显示顺序
+	 * 菜单/按钮名称
 	 */
-	private Integer orderNum;
+	@TableField("menu_name")
+	private String menuName;
+
 	/**
-	 * 路由地址
+	 * 菜单URL
 	 */
+	@TableField("path")
 	private String path;
+
 	/**
-	 * 组件路径
+	 * 对应 Vue组件
 	 */
+	@TableField("component")
 	private String component;
-	/**
-	 * 是否为外链（0是 1否）
-	 */
-	private Integer isFrame;
-	/**
-	 * 是否缓存（0缓存 1不缓存）
-	 */
-	private Integer isCache;
-	/**
-	 * 菜单类型（M目录 C菜单 F按钮）
-	 */
-	private String menuType;
-	/**
-	 * 菜单状态（0显示 1隐藏）
-	 */
-	private String visible;
-	/**
-	 * 菜单状态（0正常 1停用）
-	 */
-	private String status;
+
 	/**
 	 * 权限标识
 	 */
+	@TableField("perms")
 	private String perms;
+
 	/**
-	 * 菜单图标
+	 * 图标
 	 */
+	@TableField("icon")
 	private String icon;
+
 	/**
-	 * 创建者
+	 * 排序
 	 */
-	private String createBy;
+	@TableField("order_num")
+	private Integer orderNum;
+
 	/**
 	 * 创建时间
 	 */
+	@TableField(value = "create_time",fill = FieldFill.INSERT)
 	private Date createTime;
+
 	/**
-	 * 更新者
+	 * 修改时间
 	 */
-	private String updateBy;
-	/**
-	 * 更新时间
-	 */
-	@TableField(value = "MODIFY_TIME")
+	@TableField(value = "MODIFY_TIME",fill = FieldFill.INSERT_UPDATE)
 	private Date modifyTime;
+
+
 	/**
-	 * 备注
+	 * 菜单类型（M目录 C菜单 F按钮）
 	 */
-	private String remark;
+	@TableField("type")
+	private String type;
+
 	/**
 	 * 0 未删除 1 已删除
 	 */
 	@TableLogic
+	@TableField("del_flag")
 	private String delFlag;
+
 
 }
