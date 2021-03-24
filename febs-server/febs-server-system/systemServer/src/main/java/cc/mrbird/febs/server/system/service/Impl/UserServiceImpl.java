@@ -1,8 +1,10 @@
 package cc.mrbird.febs.server.system.service.Impl;
 
 import cc.mrbird.febs.common.entity.QueryRequest;
+import cc.mrbird.febs.common.entity.constant.FebsConstant;
 import cc.mrbird.febs.common.entity.constant.StringConstant;
 import cc.mrbird.febs.common.entity.system.SystemUser;
+import cc.mrbird.febs.common.utils.SortUtil;
 import cc.mrbird.febs.server.system.mapper.UserDataPermissionMapper;
 import cc.mrbird.febs.server.system.service.IUserRoleService;
 import cc.mrbird.febs.server.system.service.IUserService;
@@ -121,6 +123,20 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
         pageParam.setRecords(systemUsers);
         pageParam.setTotal(count);
 
+    }
+
+    @Override
+    public void passwordReset(String[] usernameList) {
+
+        this.userMapper.batchUptPasswordReset(usernameList);
+    }
+
+    @Override
+    public IPage<SystemUser> findUserDetailList(SystemUser user, QueryRequest queryRequest) {
+
+        Page<SystemUser> page = new Page<>(queryRequest.getPageNum(), queryRequest.getPageSize());
+        SortUtil.handlePageSort(queryRequest, page, "userId", FebsConstant.ORDER_ASC, false);
+        return this.baseMapper.findUserDetailPage(page, user);
     }
 
     private void setUserRoles(SystemUser user, String[] roles) {
