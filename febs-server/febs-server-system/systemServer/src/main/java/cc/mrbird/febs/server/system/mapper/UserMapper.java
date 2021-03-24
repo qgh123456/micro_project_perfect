@@ -31,4 +31,6 @@ public interface UserMapper extends BaseMapper<SystemUser> {
     List<SystemUser> queryPage(Map<String, Object> queryMap);
 
     Long countByQueryMap(Map<String, Object> queryMap);
+
+    void batchUptPasswordReset(String[] usernameList);
 }
