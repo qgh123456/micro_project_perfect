@@ -1,11 +1,12 @@
 package cc.mrbird.febs.common.entity.system;
 
 import cc.mrbird.febs.common.annotation.IsMobile;
+import cc.mrbird.febs.common.utils.converter.TimeConverter;
 import com.baomidou.mybatisplus.annotation.*;
+import com.wuwenze.poi.annotation.ExcelField;
 import lombok.Data;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
-
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
@@ -49,6 +50,7 @@ public class SystemUser implements Serializable {
      */
     @TableField("USERNAME")
     @Size(min = 4, max = 10, message = "{range}")
+    @ExcelField(value = "用户名")
     private String username;
 
     /**
@@ -69,6 +71,7 @@ public class SystemUser implements Serializable {
     @TableField("EMAIL")
     @Size(max = 50, message = "{noMoreThan}")
     @Email(message = "{email}")
+    @ExcelField(value = "邮箱")
     private String email;
 
     /**
@@ -76,6 +79,7 @@ public class SystemUser implements Serializable {
      */
     @TableField("MOBILE")
     @IsMobile(message = "{mobile}")
+    @ExcelField(value = "联系电话")
     private String mobile;
 
     /**
@@ -83,24 +87,28 @@ public class SystemUser implements Serializable {
      */
     @TableField("STATUS")
     @NotBlank(message = "{required}")
+    @ExcelField(value = "状态", writeConverterExp = "0=锁定,1=有效")
     private String status;
 
     /**
      * 创建时间
      */
     @TableField("CREATE_TIME")
+    @ExcelField(value = "创建时间", writeConverter = TimeConverter.class)
     private Date createTime;
 
     /**
      * 修改时间
      */
     @TableField("MODIFY_TIME")
+    @ExcelField(value = "修改时间", writeConverter = TimeConverter.class)
     private Date modifyTime;
 
     /**
      * 最近访问时间
      */
     @TableField("LAST_LOGIN_TIME")
+    @ExcelField(value = "最近访问时间", writeConverter = TimeConverter.class)
     private Date lastLoginTime;
 
     /**
@@ -108,6 +116,7 @@ public class SystemUser implements Serializable {
      */
     @TableField("SSEX")
     @NotBlank(message = "{required}")
+    @ExcelField(value = "性别", writeConverterExp = "0=男,1=女,2=保密")
     private String sex;
 
     @TableField("IS_TAB")
@@ -128,6 +137,7 @@ public class SystemUser implements Serializable {
      */
     @TableField("DESCRIPTION")
     @Size(max = 100, message = "{noMoreThan}")
+    @ExcelField(value = "个人描述")
     private String description;
 
     /**
