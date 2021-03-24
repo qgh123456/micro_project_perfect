@@ -100,4 +100,5 @@ public class SysDeptServiceImpl extends ServiceImpl<SysDeptMapper, SysDept> impl
             trees.add(tree);
         });
     }
+
 }

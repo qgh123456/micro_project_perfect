@@ -1,8 +1,11 @@
 package cc.mrbird.febs.server.system.controller;
 
+import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.Result;
+import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.server.system.service.ISysRoleService;
 import cc.mrbird.febs.server.system.vo.SysRole;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +33,12 @@ public class SysRoleController {
         return Result.ok().data(allRoles);
     }
 
+    @GetMapping("/pageQuery")
+    public Result options(QueryRequest queryRequest,String roleName){
 
+        Page<SysRole> page = sysRoleService.findAllRolesByPage(queryRequest,roleName);
+        return Result.ok().data(page);
+    }
 
 
 }
