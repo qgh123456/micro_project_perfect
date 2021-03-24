@@ -1,11 +1,13 @@
 package cc.mrbird.febs.server.system.controller;
 
+import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.Result;
 import cc.mrbird.febs.common.entity.system.SystemUser;
 import cc.mrbird.febs.server.system.service.IUserDataPermissionService;
 import cc.mrbird.febs.server.system.service.IUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.wuwenze.poi.ExcelKit;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.List;
 
@@ -92,7 +95,7 @@ public class UserController {
         return Result.ok();
     }
 
-    @PostMapping("/updateUser")
+    @PutMapping("/updateUser")
     @PreAuthorize("hasAuthority('user:update')")
     public Result updateUser(SystemUser systemUser){
         userService.updateUser(systemUser);
@@ -107,4 +110,24 @@ public class UserController {
         return Result.ok().data(dataPermissions);
     }
 
+    @PutMapping("/password/reset")
+    @PreAuthorize("hasAuthority('user:update')")
+    public Result passwordReset(String userIds){
+        if (org.apache.commons.lang3.StringUtils.isNotBlank(userIds)){
+            String[] userIdList = userIds.split(",");
+            this.userService.passwordReset(userIdList);
+        }
+        else{
+            return Result.error("请选择数据");
+        }
+        return Result.ok();
+    }
+
+    @PostMapping("excel")
+    @PreAuthorize("hasAuthority('user:export')")
+    public void export(QueryRequest queryRequest, SystemUser user, HttpServletResponse response) {
+
+        List<SystemUser> users = this.userService.findUserDetailList(user, queryRequest).getRecords();
+        ExcelKit.$Export(SystemUser.class, response).downXlsx(users, false);
+    }
 }
