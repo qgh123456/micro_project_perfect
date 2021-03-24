@@ -129,4 +129,14 @@
         </where>
     </select>
 
+    <update id="batchUptPasswordReset">
+        update t_user
+        set PASSWORD = '1234qwer'
+        where USER_ID in
+        <foreach collection="array" separator="," open="(" close=")" item="item">
+            #{item}
+        </foreach>
+    </update>
+
+
 </mapper>
