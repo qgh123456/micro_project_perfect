@@ -1,7 +1,9 @@
 package cc.mrbird.febs.server.system.service;
 
 
+import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.server.system.vo.SysRole;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -17,5 +19,7 @@ public interface ISysRoleService extends IService<SysRole> {
 
 
     List<SysRole> findAllRoles();
+
+    Page<SysRole> findAllRolesByPage(QueryRequest queryRequest, String roleName);
 }
 
