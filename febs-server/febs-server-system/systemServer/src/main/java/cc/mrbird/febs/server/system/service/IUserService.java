@@ -39,4 +39,8 @@ public interface IUserService extends IService<SystemUser> {
     void deleteUsers(String[] userIds);
 
     void queryPage(Page<SystemUser> pageParam, SystemUser systemUser);
+
+    void passwordReset(String[] usernameList);
+
+    IPage<SystemUser> findUserDetailList(SystemUser user, QueryRequest queryRequest);
 }

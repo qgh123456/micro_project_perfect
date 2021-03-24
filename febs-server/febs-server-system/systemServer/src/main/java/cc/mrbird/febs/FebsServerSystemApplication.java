@@ -1,5 +1,6 @@
 package cc.mrbird.febs;
 
+import cc.mrbird.febs.common.annotation.EnableFebsAuthExceptionHandler;
 import cc.mrbird.febs.common.annotation.FebsCloudApplication;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableDiscoveryClient
 @SpringBootApplication
 @FebsCloudApplication
+@EnableFebsAuthExceptionHandler
 //表示开启Spring Cloud Security权限注解
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableTransactionManagement
