@@ -21,5 +21,11 @@ public interface ISysRoleService extends IService<SysRole> {
     List<SysRole> findAllRoles();
 
     Page<SysRole> findAllRolesByPage(QueryRequest queryRequest, String roleName);
+
+    boolean checkRoleName(String roleName);
+
+    void saveRole(SysRole sysRole);
+
+    void updateRole(SysRole sysRole);
 }
 
