@@ -46,6 +46,7 @@ public class FebsServerSystemResourceServerConfigure extends ResourceServerConfi
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
         resources.authenticationEntryPoint(exceptionEntryPoint)
+                // 这个地方实际上效果不大，基本上都是从全局异常拦截器那边做的
                 .accessDeniedHandler(accessDeniedHandler);
     }
 
