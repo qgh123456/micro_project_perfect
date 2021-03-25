@@ -28,10 +28,10 @@ public class SysRole implements Serializable {
 	@Size(max = 50, message = "{noMoreThan}")
 	private String remark;
 
-	@TableField(value = "CREATE_TIME")
+	@TableField(value = "CREATE_TIME",fill = FieldFill.INSERT)
 	private Date createTime;
 
-	@TableField(value = "MODIFY_TIME")
+	@TableField(value = "MODIFY_TIME",fill = FieldFill.INSERT_UPDATE)
 	private Date modifyTime;
 
 	private transient String menuIds;

@@ -1,9 +1,6 @@
 package cc.mrbird.febs.server.system.vo;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -50,6 +47,7 @@ public class SysDept implements Serializable {
 	/**
 	 * 创建时间
 	 */
+	@TableField(value = "CREATE_TIME",fill = FieldFill.INSERT_UPDATE)
 	private Date createTime;
 	/**
 	 * 更新者
@@ -60,7 +58,7 @@ public class SysDept implements Serializable {
 	/**
 	 * 更新时间
 	 */
-	@TableField(value = "MODIFY_TIME")
+	@TableField(value = "MODIFY_TIME",fill = FieldFill.INSERT_UPDATE)
 	private Date modifyTime;
 	/**
 	 * 删除标志（0代表存在 2代表删除）
