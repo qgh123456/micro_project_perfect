@@ -12,7 +12,6 @@ import java.util.Date;
  * @since 2020/03/11
  * @desc  mp 关于时间的自动配置  对应的字段要加  @TableField(fill = FieldFill.INSERT_UPDATE)
  */
-@Component
 @Slf4j
 public class CommonMetaObjectHandler implements MetaObjectHandler {
 
