@@ -27,5 +27,7 @@ public interface ISysRoleService extends IService<SysRole> {
     void saveRole(SysRole sysRole);
 
     void updateRole(SysRole sysRole);
+
+    void delRoles(String roleIds);
 }
 

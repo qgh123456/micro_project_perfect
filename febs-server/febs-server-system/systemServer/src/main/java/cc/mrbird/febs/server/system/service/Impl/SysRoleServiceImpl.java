@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -104,5 +105,20 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
                 this.sysRoleMenuMapper.insert(sysRoleMenu);
             }
         }
+    }
+
+    @Override
+    public void delRoles(String roleIds) {
+
+        String[] roleIdArray = StringUtils.splitByWholeSeparatorPreserveAllTokens(roleIds, StringConstant.COMMA);
+        List<String> roleIdList = Arrays.asList(roleIdArray);
+        // 删除角色表
+        this.sysRoleMapper.deleteBatchIds(roleIdList);
+        // 删除角色关联的权限表
+        QueryWrapper<SysRoleMenu> queryWrapper = new QueryWrapper<>();
+        roleIdList.forEach(item ->{
+            queryWrapper.lambda().eq(SysRoleMenu::getRoleId,item);
+            this.sysRoleMenuMapper.delete(queryWrapper);
+        });
     }
 }

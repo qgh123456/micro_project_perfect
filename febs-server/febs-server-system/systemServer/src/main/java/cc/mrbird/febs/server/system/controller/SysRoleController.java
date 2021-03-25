@@ -3,6 +3,7 @@ package cc.mrbird.febs.server.system.controller;
 import cc.mrbird.febs.common.entity.QueryRequest;
 import cc.mrbird.febs.common.entity.Result;
 import cc.mrbird.febs.common.entity.system.SystemUser;
+import cc.mrbird.febs.common.utils.StringUtils;
 import cc.mrbird.febs.server.system.service.ISysRoleService;
 import cc.mrbird.febs.server.system.vo.SysRole;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -58,6 +59,19 @@ public class SysRoleController {
     public Result updateRole(SysRole sysRole){
 
         this.sysRoleService.updateRole(sysRole);
+        return Result.ok().data("修改成功");
+    }
+
+    @DeleteMapping("/delRoles/{roleIds}")
+    public Result delRoles(@PathVariable(value = "roleIds")String roleIds){
+
+        if(StringUtils.isNotBlank(roleIds)){
+            // 如果存在
+            this.sysRoleService.delRoles(roleIds);
+        }
+        else {
+            return Result.ok().data("请选择数据");
+        }
         return Result.ok().data("修改成功");
     }
 
