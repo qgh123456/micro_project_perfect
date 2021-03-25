@@ -3,6 +3,7 @@ package cc.mrbird.febs.common.entity.system;
 import cc.mrbird.febs.common.annotation.IsMobile;
 import cc.mrbird.febs.common.utils.converter.TimeConverter;
 import com.baomidou.mybatisplus.annotation.*;
+import com.wuwenze.poi.annotation.Excel;
 import com.wuwenze.poi.annotation.ExcelField;
 import lombok.Data;
 import org.hibernate.validator.constraints.Email;
@@ -20,6 +21,7 @@ import java.util.Date;
  */
 @Data
 @TableName("t_user")
+@Excel("用户信息表")
 public class SystemUser implements Serializable {
 
     private static final long serialVersionUID = -4352868070794165001L;
@@ -93,14 +95,14 @@ public class SystemUser implements Serializable {
     /**
      * 创建时间
      */
-    @TableField("CREATE_TIME")
+    @TableField(value = "CREATE_TIME",fill = FieldFill.INSERT)
     @ExcelField(value = "创建时间", writeConverter = TimeConverter.class)
     private Date createTime;
 
     /**
      * 修改时间
      */
-    @TableField("MODIFY_TIME")
+    @TableField(value = "MODIFY_TIME",fill = FieldFill.INSERT_UPDATE)
     @ExcelField(value = "修改时间", writeConverter = TimeConverter.class)
     private Date modifyTime;
 
