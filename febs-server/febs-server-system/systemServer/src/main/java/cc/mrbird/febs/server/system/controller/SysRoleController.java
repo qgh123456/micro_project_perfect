@@ -40,5 +40,25 @@ public class SysRoleController {
         return Result.ok().data(page);
     }
 
+    @GetMapping("/check/{roleName}")
+    public Result check(@PathVariable(value = "roleName") String roleName){
+
+        boolean result = this.sysRoleService.checkRoleName(roleName);
+        return Result.ok().data(result);
+    }
+
+    @PostMapping("/saveRole")
+    public Result saveRole(SysRole sysRole){
+
+        this.sysRoleService.saveRole(sysRole);
+        return Result.ok().data("保存成功");
+    }
+
+    @PutMapping("/updateRole")
+    public Result updateRole(SysRole sysRole){
+
+        this.sysRoleService.updateRole(sysRole);
+        return Result.ok().data("修改成功");
+    }
 
 }
