@@ -1,5 +1,6 @@
 package cc.mrbird.febs.common.config;
 
+import cc.mrbird.febs.common.handler.CommonMetaObjectHandler;
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
@@ -49,5 +50,9 @@ public class MybatisPlusConfig {
 		return new LogicSqlInjector();
 	}
 
+	@Bean
+    public CommonMetaObjectHandler commonMetaObjectHandler(){
+	    return new CommonMetaObjectHandler();
+    }
 
 }
