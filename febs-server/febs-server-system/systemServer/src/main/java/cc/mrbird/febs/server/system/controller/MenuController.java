@@ -46,4 +46,6 @@ public class MenuController {
         result.put("permissions", userPermissions);
         return Result.ok().data(result);
     }
+
+
 }
