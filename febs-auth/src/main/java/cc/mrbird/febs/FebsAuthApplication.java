@@ -15,7 +15,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @Author: qiguohui
  * @Date: 2020/12/29 13:49
  */
-@EnableDiscoveryClient
+//@EnableDiscoveryClient #nacos 不需要这个注解也可以
 @SpringBootApplication
 //@EnableFebsAuthExceptionHandler
 //@EnableFebsServerProtect

@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: FEBS-Auth
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.url}:8848
+
 # redis 的配置
   redis:
     database: 0
@@ -32,7 +38,7 @@ spring:
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://47.98.136.239:3310/myproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+          url: jdbc:mysql://47.98.136.239:3306/myproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
   #rabbitmq的配置
   rabbitmq:
     host: 47.98.136.239
@@ -81,13 +87,14 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 20
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    instance-info-replication-interval-seconds: 30
-    registry-fetch-interval-seconds: 30
-    serviceUrl:
-      defaultZone: http://febs:123456@localhost:8001/register/eureka/
+
+#eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: 20
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    instance-info-replication-interval-seconds: 30
+#    registry-fetch-interval-seconds: 30
+#    serviceUrl:
+#      defaultZone: http://febs:123456@localhost:8001/register/eureka/
