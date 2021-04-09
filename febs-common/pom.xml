@@ -12,6 +12,7 @@
     <artifactId>febs-common</artifactId>
     <name>febs-common</name>
     <description>FEBS-common通用模块</description>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -25,9 +26,17 @@
             <version>1.2.51</version>
         </dependency>
 
-        <dependency>
+        <!-- eureka-->
+<!--        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>-->
+
+        <!--nacos-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+<!--            <version>0.9.0.RELEASE</version>-->
         </dependency>
 
         <dependency>
