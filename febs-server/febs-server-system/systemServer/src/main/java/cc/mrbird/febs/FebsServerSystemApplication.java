@@ -15,10 +15,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Author: qiguohui
  * @Date: 2020/12/30 17:47
  */
-@EnableDiscoveryClient
+//@EnableDiscoveryClient # nacos不需要
 @SpringBootApplication
 @FebsCloudApplication
-@EnableFebsAuthExceptionHandler
+//@EnableFebsAuthExceptionHandler
 //表示开启Spring Cloud Security权限注解
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableTransactionManagement

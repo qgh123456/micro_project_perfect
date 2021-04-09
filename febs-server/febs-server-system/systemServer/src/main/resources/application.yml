@@ -20,8 +20,16 @@ spring:
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://47.98.136.239:3310/myproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+          url: jdbc:mysql://47.98.136.239:3306/myproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+
+
       p6spy: true
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.url}:8848
+
   zipkin:
     sender:
       type: rabbit
@@ -37,15 +45,15 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
 
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 20
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    instance-info-replication-interval-seconds: 30
-    serviceUrl:
-      defaultZone: http://febs:123456@localhost:8001/register/eureka/
+#eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: 20
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    instance-info-replication-interval-seconds: 30
+#    serviceUrl:
+#      defaultZone: http://febs:123456@localhost:8001/register/eureka/
 
 security:
   oauth2:

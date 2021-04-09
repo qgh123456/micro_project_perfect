@@ -17,6 +17,7 @@ import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -138,6 +139,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
         SortUtil.handlePageSort(queryRequest, page, "userId", FebsConstant.ORDER_ASC, false);
         return this.baseMapper.findUserDetailPage(page, user);
     }
+
 
     private void setUserRoles(SystemUser user, String[] roles) {
         Arrays.stream(roles).forEach(roleId -> {

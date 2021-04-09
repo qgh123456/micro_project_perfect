@@ -43,4 +43,5 @@ public interface IUserService extends IService<SystemUser> {
     void passwordReset(String[] usernameList);
 
     IPage<SystemUser> findUserDetailList(SystemUser user, QueryRequest queryRequest);
+
 }

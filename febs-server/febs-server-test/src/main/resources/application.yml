@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: FEBS-Server-Test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.url}:8848
   # 关闭多数据源自动装配
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration
@@ -47,16 +51,16 @@ management:
     health:
       show-details: ALWAYS
 
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 20
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    instance-info-replication-interval-seconds: 30
-    registry-fetch-interval-seconds: 3
-    serviceUrl:
-      defaultZone: http://febs:123456@localhost:8001/register/eureka/
+#eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: 20
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    instance-info-replication-interval-seconds: 30
+#    registry-fetch-interval-seconds: 3
+#    serviceUrl:
+#      defaultZone: http://febs:123456@localhost:8001/register/eureka/
 
 # 1,到认证服务器里校验当前请求头中的令牌是否为合法的令牌；2,通过当前令牌获取对应的用户信息
 security:

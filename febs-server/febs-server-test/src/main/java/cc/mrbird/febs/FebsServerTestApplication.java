@@ -20,7 +20,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
  * @Date: 2020/12/31 10:19
  */
 @EnableFeignClients // 开启feign
-@EnableDiscoveryClient
+//@EnableDiscoveryClient #nacos不需要
 @SpringBootApplication
 @FebsCloudApplication
 // 表示开启Spring Cloud Security权限注解

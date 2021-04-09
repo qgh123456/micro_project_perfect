@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: FEBS-Gateway
+
   boot:
     admin:
       client:
@@ -44,6 +45,9 @@ spring:
       default-filters:
         - StripPrefix=1
 
+    nacos:
+      discovery:
+        server-addr: ${nacos.url}:8848
 #如果要针对不同的路由设置不同的超时时间，可以按照下面格式配置
 #  command:
 #    HystrixCommandKey:
@@ -59,18 +63,18 @@ hystrix:
           thread:
             timeoutInMilliseconds: 3000
 
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 20
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    instance-info-replication-interval-seconds: 30
-    registry-fetch-interval-seconds: 3
+#eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: 20
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    instance-info-replication-interval-seconds: 30
+#    registry-fetch-interval-seconds: 3
+##    serviceUrl:
+##      defaultZone: http://febs:123456@${febs-register}:8001/register/eureka/
 #    serviceUrl:
-#      defaultZone: http://febs:123456@${febs-register}:8001/register/eureka/
-    serviceUrl:
-      defaultZone: http://febs:123456@localhost:8001/register/eureka/
+#      defaultZone: http://febs:123456@localhost:8001/register/eureka/
 
 management:
   endpoint:

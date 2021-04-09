@@ -1,7 +1,7 @@
 package cc.mrbird.febs.mq.feign.fallback;
 
 import cc.mrbird.febs.common.entity.Result;
-import cc.mrbird.febs.mq.feign.SystemClient;
+import cc.mrbird.febs.mq.feign.SysOperLogClient;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -14,10 +14,10 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class SystemServiceFallback implements FallbackFactory<SystemClient> {
+public class SystemServiceFallback implements FallbackFactory<SysOperLogClient> {
     @Override
-    public SystemClient create(Throwable throwable) {
-        return new SystemClient() {
+    public SysOperLogClient create(Throwable throwable) {
+        return new SysOperLogClient() {
 
             @Override
             public Result<Object> saveForMq(String messageData) {
