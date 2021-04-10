@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: FEBS-Server-System
+#  spring.profile.active
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.url}:8848
+      config:
+        server-addr: ${nacos.url}:8848
+        namespace: cd585124-f518-45c3-b52b-c1140691876d
+        group: DEFAULT_GROUP
+        prefix: febs-server-system
+        file-extension: yaml
+        ext-config[0]:
+          data-id: redis.yaml
+          refresh: true
+          # 不指定，使用默认的分组
+#          group: provider
+        ext-config[1]:
+          data-id: rabbitmq.yaml
+          refresh: true

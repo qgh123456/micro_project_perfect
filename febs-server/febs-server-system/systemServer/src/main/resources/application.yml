@@ -1,113 +1,70 @@
-server:
-  port: 8201
-#  servlet:
-#    context-path: /system
-spring:
-  application:
-    name: FEBS-Server-System
-  datasource:
-    dynamic:
-      hikari:
-        connection-timeout: 30000
-        max-lifetime: 1800000
-        max-pool-size: 15
-        min-idle: 5
-        connection-test-query: select 1
-        pool-name: FebsHikariCP
-      primary: base
-      datasource:
-        base:
-          username: root
-          password: root
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://47.98.136.239:3306/myproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
-
-
-      p6spy: true
-
-  cloud:
-    nacos:
-      discovery:
-        server-addr: ${nacos.url}:8848
-
-  zipkin:
-    sender:
-      type: rabbit
-  sleuth:
-    sampler:
-      probability: 1
-  rabbitmq:
-    host: 47.98.136.239
-    port: 5672
-    username: febs
-    password: 123456
-  jackson:
-    time-zone: GMT+8
-    date-format: yyyy-MM-dd HH:mm:ss
-
-#eureka:
-#  instance:
-#    lease-renewal-interval-in-seconds: 20
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#    instance-info-replication-interval-seconds: 30
-#    serviceUrl:
-#      defaultZone: http://febs:123456@localhost:8001/register/eureka/
-
-security:
-  oauth2:
-    resource:
-      id: ${spring.application.name}
-      user-info-uri: http://localhost:8301/auth/user
-
-
-
-#rabbitmq的配置
-  rabbitmq:
-    host: 47.98.136.239
-    port: 5672
-    username: guest
-    password: guest
-    #虚拟host 可以不设置,使用server默认host
-    #    virtual-host: JCcccHost
-
-    #确认消息已发送到交换机(Exchange)
-    publisher-confirms: true
-    #确认消息已发送到队列(Queue)
-    publisher-returns: true
-
-  boot:
-    admin:
-      client:
-        url: http://localhost:8401
-        username: febs
-        password: 123456
-
-info:
-  app:
-    name: ${spring.application.name}
-    description: "@project.description@"
-    version: "@project.version@"
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS
-
-mybatis-plus:
-  type-aliases-package: cc.mrbird.febs.common.entity.system,cc.mrbird.febs.server.system.vo
-  mapper-locations: classpath:mapper/*.xml
-  configuration:
-    jdbc-type-for-null: null
-  global-config:
-    banner: true
-    db-config:
-      logic-delete-field: delFlag
-      logic-delete-value: 1
-      logic-not-delete-value: 0
-
+#server:
+#  port: 8201
+#spring:
+#  datasource:
+#    dynamic:
+#      hikari:
+#        connection-timeout: 30000
+#        max-lifetime: 1800000
+#        max-pool-size: 15
+#        min-idle: 5
+#        connection-test-query: select 1
+#        pool-name: FebsHikariCP
+#      primary: base
+#      datasource:
+#        base:
+#          username: root
+#          password: root
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#          url: jdbc:mysql://47.98.136.239:3306/myproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+#      p6spy: true
+#mybatis-plus:
+#  type-aliases-package: cc.mrbird.febs.common.entity.system,cc.mrbird.febs.server.system.vo
+#  mapper-locations: classpath:mapper/*.xml
+#  configuration:
+#    jdbc-type-for-null: null
+#  global-config:
+#    banner: true
+#    db-config:
+#      logic-delete-field: delFlag
+#      logic-delete-value: 1
+#      logic-not-delete-value: 0
+#
+#  zipkin:
+#    sender:
+#      type: rabbit
+#  sleuth:
+#    sampler:
+#      probability: 1
+#  jackson:
+#    time-zone: GMT+8
+#    date-format: yyyy-MM-dd HH:mm:ss
+#
+#security:
+#  oauth2:
+#    resource:
+#      id: ${spring.application.name}
+#      user-info-uri: http://localhost:8301/auth/user
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8401
+#        username: febs
+#        password: 123456
+#
+#info:
+#  app:
+#    name: ${spring.application.name}
+#    description: "@project.description@"
+#    version: "@project.version@"
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
+#
+#
