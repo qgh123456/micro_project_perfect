@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: FEBS-Monitor-Admin
+#  spring.profile.active
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.url}:8848
+      config:
+        server-addr: ${nacos.url}:8848
+        namespace: 3a0dc037-a00c-4268-b2e1-2afdd7812eab
+        group: DEFAULT_GROUP
+        # 若不指定则用spring.application.name
+        prefix: febs-monitor-admin
+        file-extension: yaml

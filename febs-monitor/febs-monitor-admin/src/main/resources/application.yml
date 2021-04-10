@@ -2,8 +2,6 @@ server:
   port: 8401
 
 spring:
-  application:
-    name: FEBS-Monitor-Admin
   security:
     user:
       name: febs
