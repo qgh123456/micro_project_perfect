@@ -49,8 +49,7 @@
 ##  command:
 ##    HystrixCommandKey:
 ##      execution:
-##        isolation:
-##          thread:
+##        isolation:##          thread:
 ##            timeoutinMilliseconds:
 #hystrix:
 #  command:
