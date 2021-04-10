@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 /**
  * @ProjectName: micro_project_perfect
- * @Description:
+ * @Description: mybatisplus中添加的慢查询日志
  * @Author: qiguohui
  * @Date: 2021/1/7 11:45
  */
