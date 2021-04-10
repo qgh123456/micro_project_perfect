@@ -2,14 +2,13 @@ spring:
   application:
     name: FEBS-Auth
 #  spring.profile.active
-
   cloud:
     nacos:
       discovery:
         server-addr: ${nacos.url}:8848
       config:
         server-addr: ${nacos.url}:8848
-        namespace: ef4590b3-e46f-4ed9-98c4-cd68312202a3
+        namespace: de2638ad-8b4c-4409-ab46-690281714fc3
         group: DEFAULT_GROUP
         prefix: febs-auth
         file-extension: yaml
@@ -17,7 +16,8 @@ spring:
           data-id: redis.yaml
           refresh: true
           # 不指定，使用默认的分组
-          group: provider
+#          group: provider
         ext-config[1]:
           data-id: rabbitmq.yaml
           refresh: true
+          group: dev
