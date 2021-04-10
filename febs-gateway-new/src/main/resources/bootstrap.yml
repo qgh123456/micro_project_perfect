@@ -8,7 +8,7 @@ spring:
         server-addr: ${nacos.url}:8848
       config:
         server-addr: ${nacos.url}:8848
-        namespace: b6fa6565-09d1-4186-bfcf-bae31d599ea8
+        namespace: 1580b374-5e1e-4910-9419-5c640a02c078
         group: DEFAULT_GROUP
         # 若不指定则用spring.application.name
         prefix: febs-gateway
